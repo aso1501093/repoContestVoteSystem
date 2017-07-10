@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import cmodel.Comment;
+
 public class CommentDAO {
 
 	DataSource ds = null;
@@ -36,7 +38,10 @@ public class CommentDAO {
 	}
 
 	//コメント投稿
-	public void insertComment(int art_id, int user_id, String comment){
+	public void insertComment(Comment c, String comment){
+
+		int art_id = c.getArt_id();
+		int user_id = c.getUser_id();
 
 		try{
 			connection();
@@ -47,7 +52,7 @@ public class CommentDAO {
 			stmt.setInt(1, art_id);
 			stmt.setInt(2, user_id);
 			stmt.setString(3, comment);
-			int rs = stmt.executeUpdate();
+			stmt.executeUpdate();
 
 		}catch(Exception e){
 			System.out.println(e);
@@ -59,5 +64,4 @@ public class CommentDAO {
 			}
 		}
 	}
-
 }
