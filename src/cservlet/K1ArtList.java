@@ -30,6 +30,8 @@ public class K1ArtList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher dp=request.getRequestDispatcher("/WEB-INF/jsp/wada.jsp");
+		
+		
 		dp.forward(request, response);
 	}
 
