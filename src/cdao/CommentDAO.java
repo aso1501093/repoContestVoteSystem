@@ -61,6 +61,34 @@ public class CommentDAO {
         }
     }
 
+	//コメント投稿
+		public void insertComment(Comment c, String comment){
+
+			int art_id = c.getArt_id();
+			int user_id = c.getUser_id();
+
+			try{
+				connection();
+
+				String sql = "INSERT INTO comment(art_id, user_id, comment)"
+						+ "VALUES (?,?,?)";
+				stmt = con.prepareStatement(sql);
+				stmt.setInt(1, art_id);
+				stmt.setInt(2, user_id);
+				stmt.setString(3, comment);
+				stmt.executeUpdate();
+
+			}catch(Exception e){
+				System.out.println(e);
+			}finally{
+				try{
+					close();
+				}catch(Exception e){
+					System.out.println(e);
+				}
+			}
+		}
+
 }
 
 
