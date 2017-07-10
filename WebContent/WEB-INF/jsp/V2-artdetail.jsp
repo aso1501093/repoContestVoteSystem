@@ -13,13 +13,13 @@
 	<br>
 
 	<center>
-		<h1><c:out value="${ artdata.title }"/></h1>
+		<h1><c:out value="${ detailArt.title }"/></h1>
 	</center>
 	<br>
 
 	<center>
 
-		<img src="${ artdata.img }" />
+		<img src="${ detailArt.img }" />
 		<br>
 
 		<form action="contestvote/" method="POST">
@@ -27,11 +27,16 @@
 			<br>
 		</form>
 
-		<c:out value="${ artdata.comment }" />
+		<c:out value="${ detailArt.comment }" />
 		<br>
 
-			<c:out value="${ artdata.comment }" />
-		<br>
+		<div id="commentArea">
+			<c:forEach var="i" items="${detailArt}">
+				<ul>
+					<li><c:out value="${ i.comment }" /></li>
+				</ul>
+			</c:forEach>
+		</div>
 
 		<form action="contestvote/" method="POST">
 			<input type="text" name="comment" />
