@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import vmodel.Comment;
+import cmodel.Comment;
 
 public class CommentDAO {
 	DataSource ds = null;
