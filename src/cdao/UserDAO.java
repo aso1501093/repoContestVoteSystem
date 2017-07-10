@@ -55,7 +55,6 @@ public class UserDAO {
 			stmt.setInt(1, id);
 			stmt.setString(2, password);
 			rs = stmt.executeQuery();
-
 			
 			if(rs.next()){
 				user.setUser_id(rs.getInt("user_id"));
