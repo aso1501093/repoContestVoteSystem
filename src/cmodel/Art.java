@@ -11,6 +11,12 @@ public class Art implements Serializable {
 	int vote_num;
     Blob img;
 	
+	public Blob getImg() {
+		return img;
+	}
+	public void setImg(Blob img) {
+		this.img = img;
+	}
 	public int getArt_id() {
 		return art_id;
 	}
