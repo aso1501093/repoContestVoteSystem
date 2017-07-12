@@ -1,4 +1,4 @@
-package vdao;
+package cdao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import vmodel.Art;
+import cmodel.Art;
 
 public class ArtDAO {
 

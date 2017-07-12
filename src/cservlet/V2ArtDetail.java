@@ -1,4 +1,4 @@
-package vservlet;
+package cservlet;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import vdao.ArtDAO;
-import vmodel.Art;
+import cdao.ArtDAO;
+import cmodel.Art;
 
 /**
  * Servlet implementation class V2ArtDetail
