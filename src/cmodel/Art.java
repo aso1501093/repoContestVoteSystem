@@ -6,11 +6,20 @@ import java.sql.Blob;
 public class Art implements Serializable {
 	int art_id;
 	String title;
+
 	int contest_id;
 	int user_id;
 	int vote_num;
     Blob img;
+    String base64Image;
 	
+	public String getBase64Image() {
+		return base64Image;
+	}
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+    
 	public Blob getImg() {
 		return img;
 	}
