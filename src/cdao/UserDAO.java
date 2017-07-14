@@ -41,7 +41,7 @@ public class UserDAO {
 		}
 	}
 
-	public User selectAdmin(int id, String password){
+	public User loginCheck(int id, String password){
 
 		User user = new User();
 
@@ -66,7 +66,31 @@ public class UserDAO {
 
 		}catch(Exception e){
 			user = null;
-			System.out.println("databaseerror"+e);;
+			System.out.println("databaseerror"+e);
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+				System.out.println("2databaseerror"+e);
+			}
+		}
+
+		return user;
+	}
+
+	public Boolean registrationUser(int id, String password){
+		try{
+			connection();
+
+			String sql = "INSERT INTO user VALUES(?,?)";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, id);
+			stmt.setString(2, password);
+			stmt.executeUpdate();
+			
+		}catch(Exception e){
+			System.out.println("databaseerror"+e);
+			return false;
 		}finally{
 			try{
 				close();
@@ -74,8 +98,7 @@ public class UserDAO {
 				System.out.println("2databaseerror"+e);;
 			}
 		}
-
-		return user;
+		return true;
 	}
 
 }
