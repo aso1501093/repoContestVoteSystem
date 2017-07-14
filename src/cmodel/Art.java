@@ -12,7 +12,14 @@ public class Art implements Serializable {
 	int vote_num;
     Blob img;
     String base64Image;
+    String extension;
 	
+	public String getExtension() {
+		return extension;
+	}
+	public void setExtension(String extension) {
+		this.extension = extension;
+	}
 	public String getBase64Image() {
 		return base64Image;
 	}
