@@ -9,7 +9,8 @@
 <title></title>
 </head>
 <body>
-	<h2>id、パスワードを入力してください</h2>
+	<h1>コンテスト投票</h1>
+	<h2><font color="red"><c:out value="${error}" /></font></h2>
 	<form method="POST" action="T1Login">
 		<table>
 			<tr>
@@ -21,6 +22,10 @@
 				<td><input type="password" name="pass"></td>
 			</tr>
 		</table>
+		<button type="submit">ログイン</button>
 	</form>
+	<p>まだ登録されてない方はこちら</p><br>
+	<button onclick="javascript:location.href='L2-regist.jsp';">新規登録</button>
+	<p><c:out value="${registrationMessage}" /></p>
 </body>
 </html>

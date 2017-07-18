@@ -3,11 +3,12 @@ package cdao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import vmodel.Comment;
+import cmodel.Comment;
 
 public class CommentDAO {
 	DataSource ds = null;
@@ -33,6 +34,40 @@ public class CommentDAO {
 		if(con != null){
 			con.close();
 		}
+	}
+
+	//コメント一覧取得
+	public ArrayList<Comment> selectComment(int art_id){
+
+		ArrayList<Comment> list = new ArrayList<Comment>();
+
+		try{
+			connection();
+
+			String sql = "SELECT comment FROM comment WHERE art_id = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(2, art_id);
+			rs = stmt.executeQuery();
+
+			while(rs.next()){
+
+				Comment comment = new Comment();
+
+				comment.setComment(rs.getString("comment"));
+
+				list.add(comment);
+			}
+		}catch(Exception e){
+			System.out.println(e);
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+				System.out.println(e);
+			}
+		}
+
+		return list;
 	}
 
 
@@ -61,8 +96,31 @@ public class CommentDAO {
         }
     }
 
+	//コメント投稿
+	public void insertComment(Comment c, String comment){
+
+		int art_id = c.getArt_id();
+		int user_id = c.getUser_id();
+
+		try{
+			connection();
+
+			String sql = "INSERT INTO comment(art_id, user_id, comment)"
+					+ "VALUES (?,?,?)";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, art_id);
+			stmt.setInt(2, user_id);
+			stmt.setString(3, comment);
+			stmt.executeUpdate();
+
+		}catch(Exception e){
+			System.out.println(e);
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+				System.out.println(e);
+			}
+		}
+	}
 }
-
-
-
-
