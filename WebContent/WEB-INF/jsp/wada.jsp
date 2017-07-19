@@ -15,13 +15,17 @@
 				<td>名前</td>
 				<td>画像</td>
 			</tr>
-			<c:forEach items="${ requestScope.itemList }" var="item">
 			<tr>
-				<td><c:out value="${ item.id }" /></td>
-				<td><c:out value="${ item.name }" /></td>
-				<td><img style="width: 100px; height: 100px" src="getImage?id=1"></td>
+				<td><c:out value="1" /></td>
+				<td><c:out value="タイトル" /></td>
+				<td><img style="width: 100px; height: 100px" src="wadaTest?id=1"></td>
 			</tr>
-			</c:forEach>
+				<tr>
+				<td><c:out value="1" /></td>
+				<td><c:out value="タイトル" /></td>
+				<td><img style="width: 100px; height: 100px" src="data:image/jpg;base64,${test}"></td>
+			</tr>
+			
 		</table>
 	</body>
 </body>
