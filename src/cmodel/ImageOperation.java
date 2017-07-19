@@ -14,7 +14,7 @@ import org.apache.tomcat.util.codec.binary.Base64;
 
 public class ImageOperation {
 
-	public String convertBlobToBase64(InputStream is){
+	public String convertBlobToBase64(InputStream is,String extension){
 		
 		BufferedInputStream bis = new BufferedInputStream(is);
 		try {
@@ -33,9 +33,10 @@ public class ImageOperation {
 	        Base64 base64 = new Base64();
 	        byte[] encoded = base64.encode(bImage);
 	        String  base64Image = new String(encoded);
+	        String imgText="data:image/"+extension+";base64,"+base64Image;
 	        System.out.println("base64Image  "+base64Image);
 	        System.out.println("base64Image 長さ"+base64Image.length());
-	        return base64Image;
+	        return imgText;
 	    
 
 			
@@ -51,5 +52,41 @@ public class ImageOperation {
 		return null;
 	}
 	
+	
+	
+	
+//public String convertBlobToBase642(InputStream is,String ex){
+//	BufferedInputStream bis = new BufferedInputStream(is);
+//	try {
+//		BufferedImage img=ImageIO.read(bis);
+//		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//		BufferedOutputStream bos = new BufferedOutputStream(baos);
+//		img.flush();
+//
+//		// 読み終わった画像をバイト出力へ。
+//		ImageIO.write(img, "jpg", bos);
+//		bos.flush();
+//		bos.close();
+//		byte[] bImage = baos.toByteArray();
+//
+//		// バイト配列→BASE64へ変換する
+//		Base64 base64 = new Base64();
+//		byte[] encoded = base64.encode(bImage);
+//		String  base64Image = new String(encoded);
+//	
+//		String imgText="data:image/"+ex+";base64,"+base64Image;
+//		System.out.println("base64Image  "+base64Image);
+//		System.out.println("base64Image 長さ"+base64Image.length());
+//		return imgText;
+//
+//	} catch (IOException e) {
+//		// TODO Auto-generated catch block
+//		System.out.println(e);
+//		e.printStackTrace();
+//		
+//	}		
+//		return null;
+//	}
+//	
 	
 }
