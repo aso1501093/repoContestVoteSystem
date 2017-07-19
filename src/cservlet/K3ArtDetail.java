@@ -123,6 +123,37 @@ public class K3ArtDetail extends HttpServlet {
 		
 		return list;
 	}
+	
+	public Art getArtDetail(int artid){
+		Art art=new Art();
+		
+		try{
+			connection();
+			String sql = "SELECT comment from comment where art_id=? Order By comment_id ASC";
+
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, artid);
+			rs = stmt.executeQuery();
+
+			if(rs.next()){
+
+				
+				
+	
+			}
+		}catch(Exception e){
+			System.out.println(e);
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+				System.out.println(e);
+			}
+		}
+		
+
+		return art;
+	}
 
 
 }
