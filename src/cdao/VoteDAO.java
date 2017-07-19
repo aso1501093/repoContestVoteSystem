@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import cmodel.Comment;
+import cmodel.Vote;
 
 public class VoteDAO {
 	DataSource ds = null;
@@ -36,7 +36,33 @@ public class VoteDAO {
 	}
 
 
-	
+	public void Vote(Vote v){
+		 try{
+	            connection();
+
+	            String sql = "INSERT INTO comment(user_id,contest_id,art_id) VALUES(?.?.?) ";
+	            stmt = con.prepareStatement(sql);
+	            stmt.setInt(1, v.getUser_id());
+	            stmt.setInt(2, v.getContest_id());
+	            stmt.setInt(3, v.getArt_id());
+
+
+	            stmt.executeUpdate();
+
+	            System.out.println(sql);
+
+	        }catch(Exception e){
+	            System.out.println("Inserterror1"+e);
+	        }finally{
+	            try{
+	                close();
+	            }catch(Exception e){
+	            	System.out.println("Inserterror2"+e);
+
+	            }
+	        }
+	}
+
 }
 
 
