@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import cmodel.Comment;
+import cmodel.Contest;
 
 public class ContestDAO {
 	DataSource ds = null;
@@ -35,10 +35,34 @@ public class ContestDAO {
 		}
 	}
 
+	public Contest selectContestName(int contest_id){
 
-	
+		try{
+			connection();
+
+			String sql = "SELECT contest_name FROM contest WHERE contest_id = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1,  contest_id);
+			rs = stmt.executeQuery();
+
+			rs.next();
+
+			Contest contest = new Contest();
+
+			contest.setName(rs.getString("contest_name"));
+
+			return contest;
+
+		}catch(Exception e){
+			System.out.println(e);
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+				System.out.println(e);
+			}
+		}
+
+		return null;
+	}
 }
-
-
-
-
