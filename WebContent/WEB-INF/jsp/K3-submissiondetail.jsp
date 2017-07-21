@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ include file="/WEB-INF/jsp/common.jsp"%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+画像<img src="${art.base64Image }"><br>
+タイトル${art.title }<br>
+アートID${art.art_id }<br>
+コンテストID${art.contest_id }<br><br>
 
+<c:forEach var="comments" items="${commentlist}" varStatus="loop">
+${comments }<br>
+
+</c:forEach>
+
+<form action="/Contest/K3AddComment" method="post">
+<input type="hidden" name="art_id" value="${art.art_id}">
+<input type="text" name="comment">
+<input type="submit" value="投稿">
+</form>
 </body>
 </html>

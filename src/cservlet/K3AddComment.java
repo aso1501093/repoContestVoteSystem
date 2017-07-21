@@ -12,7 +12,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
+import cmodel.User;
 
 /**
  * Servlet implementation class K3AddComment
@@ -39,6 +42,7 @@ public class K3AddComment extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 
 	/**
@@ -46,7 +50,30 @@ public class K3AddComment extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		HttpSession session = request.getSession();
+		String newcomment=request.getParameter("comment");
+		
+		//テスト用------------------
+		User user=new User();
+		user.setUser_id(1501155);
+		session.setAttribute("user", user);
+		//---------------------------
+		
+		User loginuser=(User)session.getAttribute("user");
+		
+		
+		
+		int user_id=loginuser.getUser_id();
+		int art_id=Integer.parseInt(request.getParameter("art_id"));
+
+		
+		if(!newcomment.equals("")){//コメント追加
+			
+			if(addComment(art_id,user_id,newcomment))System.out.println("挿入成功");
+
+		}
+
 	}
 
 
@@ -76,7 +103,7 @@ public class K3AddComment extends HttpServlet {
 	}
 
 
-	public boolean insertData(int art_id,int user_id,String comment){
+	public boolean addComment(int art_id,int user_id,String comment){
 
 		int autoIncKey=-1;
 		try {
@@ -105,5 +132,7 @@ public class K3AddComment extends HttpServlet {
 
 		return true;
 	}
+	
+	
 
 }

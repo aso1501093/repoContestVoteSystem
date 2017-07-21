@@ -51,7 +51,7 @@ public class K1ArtList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//		String contestid= request.getParameter("artid");
+		//		String contestid= request.getParameter("contestid");
 		String contestid="1";
 
 		ArrayList<Art> artList=getArtList(1);
