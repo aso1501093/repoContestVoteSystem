@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>応募作品一覧</title>
+<link rel="stylesheet" type="text/css" href="/contestvote/css/main.css">
 </head>
 <body>
+
+<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
+
+<div class="back"><a>応募総数:350点<br>投票総数:920票</a></div>
+
+<img src=""><img src=""><img src=""><img src=""><img src=""><br><br>
+<img src=""><img src=""><img src=""><img src=""><img src=""><br><br>
+
 
 </body>
 </html>

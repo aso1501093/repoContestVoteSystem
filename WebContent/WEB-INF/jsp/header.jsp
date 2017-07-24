@@ -1,12 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jsp/common.jsp"%>
+<div id="headerArea">
+	<div style="width: 400px; float: left;">
+		<h1 style="font-size: 2em; color: #ffffff; vertical-align: middle;">
+			<a class="header">コンテスト投票システム</a>
+		</h1>
+	</div>
+	<div
+		style="text-align: right; font-size: 20px; width: 330px; padding: 4px; float: right;">
 
-</body>
-</html>
+		ようこそ&nbsp;
+		<c:out value="${CommonLoginMember.memberName}" />
+		&nbsp; 様 &nbsp; <br>
+
+		<%-- ログイン時 --%>
+
+			<a class="header2" href="/lecturesystem/Logout">ログアウト</a>
+
+	</div>
+	<br style="clear: both;">
+</div>
