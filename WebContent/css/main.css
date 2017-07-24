@@ -6,7 +6,7 @@
 /* ヘッダー */
 
 #headerArea {
-	background-color: #00CCFF;
+	background-color: #c0c0c0;
 	color: #ffffff;
 	height: 70px;
 	padding-left: 30px;
@@ -146,6 +146,41 @@ figure:hover figcaption {
     -moz-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     -ms-transition: scale(1, 1);
+}
+
+
+
+
+
+.back {
+ position: fixed;
+ bottom: 50%;
+ right: 30px;
+
+ border:1px solid #ffff80;
+ padding:2pt;
+ background-color: #ffff80;
+ filter:alpha(opacity=85);
+ -moz-opacity:0.85;
+ -khtml-opacity: 0.85;
+ opacity:0.85;
+
+ text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+ -webkit-box-shadow: 1px 1px 2px #E7E7E7;
+ -moz-box-shadow: 1px 1px 2px #E7E7E7;
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+
+	font-size: 15px;
+	float: center;
+	border: 1px solid #2fa6fd;
+	background-color: #B2EBF2;
+	color: #757575;
+	width: 120px;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 50px;
+
 }
 
 

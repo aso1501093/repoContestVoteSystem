@@ -11,6 +11,8 @@
 
 <jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 
+<div class="back"><a>応募総数:350点<br>投票総数:920票</a></div>
+
 <img src=""><img src=""><img src=""><img src=""><img src=""><br><br>
 <img src=""><img src=""><img src=""><img src=""><img src=""><br><br>
 
