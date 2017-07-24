@@ -1,0 +1,162 @@
+@CHARSET "UTF-8";
+
+
+
+
+/* ヘッダー */
+
+#headerArea {
+	background-color: #00CCFF;
+	color: #ffffff;
+	height: 70px;
+	padding-left: 30px;
+	padding-top: 15px;
+}
+.header2 {
+	padding-right: 20px;
+	padding-bottom: 15px;
+	color: #ffffff;
+}
+
+
+
+
+
+/* K1結果発表 */
+.ranking-tr {
+	height: 350px;
+}
+.ranking-th {
+	width: 150px;
+}
+.ranking-td {
+	width: 150px;
+}
+.k1button {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+}
+
+.k1button::before {
+    content: '';
+    background-color: #dda284;
+    display: block;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 0 #fff,
+        0 0 0 0 #dda284;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.k1button:hover::before {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    box-shadow:
+        0 0 0 25px #fff,
+        0 0 0 27px #dda284;
+}
+
+
+
+
+
+/* キャプションエフェクト */
+figure {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+}
+figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  -webkit-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+  -webkit-transition: .5s;
+  transition: .5s;
+  opacity: 0;
+}
+figure:hover figcaption {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+
+
+
+
+/* 投票ボタンのエフェクト */
+#btn {
+    display: table;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+#btn a {
+    position: relative;
+    display: table-cell;
+    color: #52d3ff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+#btn a:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    border: 5px solid #52d3ff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0;
+    transition: .4s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    -moz-transition: .4s ease-in-out;
+    -o-transition: .4s ease-in-out;
+    -ms-transition: .4s ease-in-out;
+    transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -ms-transition: scale(0, 0);
+}
+#btn a:hover:after {
+    opacity: 1;
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transition: scale(1, 1);
+}
+
+
+
+
+
+
+/* 画像横並び */
+.img-left {
+	float: left;
+    width: 300px;
+    height: 300px;
+    background-color: #aa1144;
+}
