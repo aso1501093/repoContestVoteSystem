@@ -9,40 +9,41 @@
 <title>作品詳細</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/jsp/header.jsp" />
+	<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<br>
 
 	<center>
-		<h1><c:out value="${ detailArt.title }"/></h1>
-	</center>
-	<br>
+		<form action="contestvote/V2Vote" method="POST">
+			<h1><c:out value="${ image.title }"/></h1>
+			<br>
 
-	<center>
+			<img border="0" width="300" height="300" src="<c:out value="${ image.base64Image }"/>"/>
+			<br>
 
-		<img src="${ detailArt.img }" />
-		<br>
-
-		<form action="contestvote/" method="POST">
-			<input type="button" name="vote" value="投票する" />
+			<input type="button" value="投票する" />
 			<br>
 		</form>
-
-		<c:out value="${ detailArt.comment }" />
 		<br>
 
 		<div id="commentArea">
-			<c:forEach var="i" items="${detailArt}">
+			<c:if test="${ commentList.size() == 0 }">
+				<p align="center"><c:out value="${message}"/></p>
+			</c:if>
+
+			<c:if test="${ commentList.size() > 0 }">
 				<ul>
-					<li><c:out value="${ i.comment }" /></li>
+					<c:forEach var="list" items="${commentList}">
+						<li><c:out value="${ list.comment }"/></li>
+					</c:forEach>
 				</ul>
-			</c:forEach>
+			</c:if>
 		</div>
 
-		<form action="contestvote/" method="POST">
+		<form action="contestvote/V2Contribution" method="POST">
 			<input type="text" name="comment" />
 			<br>
 
-			<input type="button" name="contribution" value="投稿" />
+			<input type="button" value="投稿" />
 		</form>
 	</center>
 </body>

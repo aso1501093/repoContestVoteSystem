@@ -9,26 +9,55 @@
 <title>作品一覧</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/jsp/header.jsp" />
-	<br>
+	<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<br>
 
-	<table border="1">
-		<tr>
-			<td>開催中コンテスト</td>
-		</tr>
+	<center>
+		<h1><c:out value="${contestName.name}"/></h1>
 
-		<c:forEach var="i" items="${list}" varStatus="status">
-			<c:forEach var="i" items="${list}">
-				<tr>
-					<c:forEach var="i" items="${list} begin="0" end="3" step="1">
-						<th><a href="/contestvote/V2ArtList?art_id=<c:out value="${ i.art_id }"/>">${ i.art_name }</a></th>
-						<td><a href="/contestvote/V2ArtList?art_id=<c:out value="${ i.art_id }"/>"><img src="${ i.art_img_name }"></a></td>
-					</c:forEach>
-				</tr>
+		<table border="1">
+			<c:forEach var="list" items="${artList}" varStatus="status">
+				<c:if test="${ status.first }">
+					<tr>
+				</c:if>
+
+						<td>
+							<p align="center"><a href="/Contest/V2ArtDetail?art_id=<c:out value="${ list.art_id }"/>">${ list.title }</a></p>
+							<p align="center">
+								<a href="/Contest/V2ArtDetail?art_id=<c:out value="${ list.art_id }"/>">
+									<img border="0" width="100" height="100" src="<c:out value="${ list.base64Image }"/>"/>
+								</a>
+							</p>
+						</td>
+
+				<c:if test="${ status.count % 4 == 0 && !status.last }">
+					</tr>
+					<tr>
+				</c:if>
+
+			<c:if test="${ status.last }">
+				<c:if test="${ status.count % 4 == 0 }">
+					</tr>
+				</c:if>
+				<c:if test="${ status.count % 4 == 1 }">
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+				<c:if test="${ status.count % 4 == 2 }">
+						<td></td>
+						<td></td>
+					</tr>
+				</c:if>
+				<c:if test="${ status.count % 4 == 3 }">
+						<td></td>
+					</tr>
+				</c:if>
+			</c:if>
+
 			</c:forEach>
-		</c:forEach>
-
-	</table>
+		</table>
+	</center>
 </body>
 </html>

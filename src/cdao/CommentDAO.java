@@ -24,10 +24,13 @@ public class CommentDAO {
 
 		return con;
 	}
+
 	public void close() throws Exception{
 		if(rs != null){
 			rs.close();
 		}
+
+
 		if(stmt != null){
 			stmt.close();
 		}
@@ -46,7 +49,7 @@ public class CommentDAO {
 
 			String sql = "SELECT comment FROM comment WHERE art_id = ?";
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(2, art_id);
+			stmt.setInt(1, art_id);
 			rs = stmt.executeQuery();
 
 			while(rs.next()){
@@ -82,7 +85,6 @@ public class CommentDAO {
             stmt.setInt(2, c.getUser_id());
             stmt.setString(3, c.getComment());
 
-
             stmt.executeUpdate();
 
         }catch(Exception e){
@@ -97,10 +99,7 @@ public class CommentDAO {
     }
 
 	//コメント投稿
-	public void insertComment(Comment c, String comment){
-
-		int art_id = c.getArt_id();
-		int user_id = c.getUser_id();
+	public void insertComment(int art_id, int user_id, String comment){
 
 		try{
 			connection();
@@ -111,6 +110,7 @@ public class CommentDAO {
 			stmt.setInt(1, art_id);
 			stmt.setInt(2, user_id);
 			stmt.setString(3, comment);
+
 			stmt.executeUpdate();
 
 		}catch(Exception e){

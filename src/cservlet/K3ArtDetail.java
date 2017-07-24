@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.naming.InitialContext;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,15 +44,20 @@ public class K3ArtDetail extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//int artid=(int)request.getAttribute("art_id");
-		int artid=1;
+		int artid=Integer.parseInt(request.getParameter("art_id"));
+		//int artid=1;
 		//写真詳細　取得
+		Art art=getArtDetail(artid);
 
 		
 		//コメント取得
 		ArrayList<String> list=getCommentList(1);//取得確認
 		
+		
+		request.setAttribute("art", art);
 		request.setAttribute("commentlist", list);
+		RequestDispatcher dp=request.getRequestDispatcher("/WEB-INF/jsp/K3-submissiondetail.jsp");
+		dp.forward(request, response);
 	}
 
 	/**
@@ -129,17 +135,18 @@ public class K3ArtDetail extends HttpServlet {
 		
 		try{
 			connection();
-			String sql = "SELECT comment from comment where art_id=? Order By comment_id ASC";
+			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id, art.art_img_name FROM art  WHERE art.art_id = ? ";
 
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, artid);
 			rs = stmt.executeQuery();
+			ImageOperation io=new ImageOperation();
 
 			if(rs.next()){
-
-				
-				
-	
+				art.setArt_id(rs.getInt("art.art_id"));
+				art.setContest_id(rs.getInt("art.contest_id"));
+				art.setTitle(rs.getString("art.art_title"));
+				art.setBase64Image(io.convertBlobToBase64(rs.getBinaryStream("art_img_name"), rs.getString("art.extension")));	
 			}
 		}catch(Exception e){
 			System.out.println(e);
