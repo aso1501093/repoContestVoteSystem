@@ -14,6 +14,8 @@
 	<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<br>
 
+
+
 	<center>
 		<h1><c:out value="${contestName.name}"/></h1>
 
