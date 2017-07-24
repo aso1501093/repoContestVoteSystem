@@ -39,7 +39,7 @@
 			+ '<table>'
 	    		+ '<c:forEach var="vote" items="${voteContest}">'
 					+ '<tr>'
-						+ '<td><c:out value="${vote.name}" /></td>'
+						+ '<td><a href="V1ArtList?contest_id=${vote.contest_id}"><c:out value="${vote.name}" /></a></td>'
 						+ '<td><c:out value="${vote.start_date}" />~<c:out value="${vote.end_date}" /></td>'
 					+ '</tr>'
 				+ '</c:forEach>'
@@ -52,7 +52,7 @@
 			+ '<table>'
 	    		+ '<c:forEach var="past" items="${pastContest}">'
 					+ '<tr>'
-						+ '<td><c:out value="${past.name}" /></td>'
+						+ '<td><a href="K1ArtList?contest_id=${vote.contest_id}"><c:out value="${past.name}" /></a></td>'
 						+ '<td><c:out value="${past.start_date}" />~<c:out value="${past.end_date}" /></td>'
 					+ '</tr>'
 				+ '</c:forEach>'
@@ -61,6 +61,7 @@
 		$('#past').html(past);
 
 		});
+	
 	</script>
 	</head>
 	<body>
