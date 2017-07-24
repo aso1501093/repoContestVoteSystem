@@ -71,30 +71,7 @@ public class CommentDAO {
 	}
 
 
-	public void addComment(Comment c){
 
-        try{
-            connection();
-
-            String sql = "INSERT INTO comment(art_id,user_id,comment) VALUES(?.?.?) ";
-            stmt = con.prepareStatement(sql);
-            stmt.setInt(1, c.getArt_id());
-            stmt.setInt(2, c.getUser_id());
-            stmt.setString(3, c.getComment());
-
-
-            stmt.executeUpdate();
-
-        }catch(Exception e){
-            System.out.println(e);
-        }finally{
-            try{
-                close();
-            }catch(Exception e){
-
-            }
-        }
-    }
 
 	//コメント投稿
 	public void insertComment(Comment c, String comment){

@@ -42,7 +42,7 @@ public class V2Addcomment extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-detail.jsp");
+		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
 		rd.forward(request, response);
 	}
 	/**
@@ -75,7 +75,7 @@ public class V2Addcomment extends HttpServlet {
 
 
 
-		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-detail.jsp");
+		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
 		rd.forward(request, response);
 	}
 

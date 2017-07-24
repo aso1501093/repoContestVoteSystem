@@ -21,8 +21,8 @@
 
 		<img src="${ detailArt.img }" />
 		<br>
-
-		<form action="contestvote/" method="POST">
+s
+		<form action="/repContestVote/V2Vote" method="POST">
 			<input type="button" name="vote" value="投票する" />
 			<br>
 		</form>
@@ -38,7 +38,7 @@
 			</c:forEach>
 		</div>
 
-		<form action="contestvote/" method="POST">
+		<form action="/repoContestVoteSystem/V2Addcomment" method="POST">
 			<input type="text" name="comment" />
 			<br>
 
