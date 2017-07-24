@@ -73,6 +73,8 @@ public class CommentDAO {
 
 
 
+
+
 	//コメント投稿
 	public void insertComment(Comment c){
 
