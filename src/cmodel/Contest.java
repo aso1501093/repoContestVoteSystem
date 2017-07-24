@@ -7,7 +7,7 @@ import java.sql.Date;
 public class Contest implements Serializable {
 	int contest_id;
 	String name;
-	Date star_date;
+	Date start_date;
 	Date end_date;
 	String overview;
 	String termtext;
@@ -30,11 +30,11 @@ public class Contest implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getStar_date() {
-		return star_date;
+	public Date getStart_date() {
+		return start_date;
 	}
-	public void setStar_date(Date star_date) {
-		this.star_date = star_date;
+	public void setStart_date(Date start_date) {
+		this.start_date = start_date;
 	}
 	public Date getEnd_date() {
 		return end_date;
