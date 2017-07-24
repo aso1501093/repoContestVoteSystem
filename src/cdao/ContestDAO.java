@@ -72,17 +72,7 @@ public class ContestDAO {
 		}
 
 		return null;
-	}
-
-
-	
-	
-	
-
-	
-
-
-		
+	}	
 
 public ArrayList<Contest> getVoteContest(String date){
 	
