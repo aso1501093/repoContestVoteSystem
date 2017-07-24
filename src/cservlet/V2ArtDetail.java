@@ -30,6 +30,8 @@ public class V2ArtDetail extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		Art art = new Art();
+
+
 		ArtDAO artDAO = new ArtDAO();
 
 //		String id = request.getParameter("art_id");
@@ -37,7 +39,7 @@ public class V2ArtDetail extends HttpServlet {
 
 	//	art = artDAO.selectArtdetail(art_id);
 		///////////////テスト用に固定値を使用/////////
-		
+
 		session.setAttribute("artdata", art);
 
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
