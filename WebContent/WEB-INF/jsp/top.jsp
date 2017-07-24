@@ -7,7 +7,7 @@
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title></title>
+	<title>トップページ</title>
 	<link rel="stylesheet" href="css/tab.css">
 	<!--  <script type="text/javascript" src="js/changeTab.js"></script> -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
@@ -62,8 +62,10 @@
 
 		});
 	</script>
+	<link rel="stylesheet" type="text/css" href="/contestvote/css/main.css">
 	</head>
 	<body>
+	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 		<ul class="tab">
 			<li class="select" >
 				募集中のコンテスト

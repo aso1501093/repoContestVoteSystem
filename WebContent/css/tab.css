@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.tab{
+	overflow:hidden;
+	}
+	
+.tab li{
+	list-style:none;
+	background:#228B22;
+	padding:10px 25px;
+	float:left;
+	margin-right:1px;
+	height:50px;
+	}
+	
+.tab li.select{
+	list-style:none;
+	background:#9ACD32;
+	}
+	
+.content li{
+	list-style:none;
+	background:#9ACD32;
+	padding:20px;
+	}
+
+.hide {
+	display:none;
+	}

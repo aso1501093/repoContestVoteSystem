@@ -57,6 +57,13 @@ s
 
 			<input type="button" value="投稿" />
 		</form>
+
+	<%-- 岩永追加分 --%>
+			<div id="btn">
+		<a href="javascript:void(0);">投票する</a>
+	</div>
+	<br><br>
+	<%-- end --%>
 	</center>
 </body>
 </html>
