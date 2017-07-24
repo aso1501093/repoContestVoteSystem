@@ -1,6 +1,8 @@
 package cservlet;
 
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,8 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cdao.ArtDAO;
+import cdao.CommentDAO;
 import cmodel.Art;
-
+import cmodel.Comment;
 /**
  * Servlet implementation class V2ArtDetail
  */
@@ -20,12 +23,19 @@ import cmodel.Art;
 public class V2ArtDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public V2ArtDetail() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		HttpSession session = request.getSession();
 
@@ -33,14 +43,29 @@ public class V2ArtDetail extends HttpServlet {
 
 
 		ArtDAO artDAO = new ArtDAO();
+		CommentDAO commentDAO = new CommentDAO();
+		ArrayList<Comment> list = new ArrayList<Comment>();
+
 
 //		String id = request.getParameter("art_id");
 	//	int art_id = Integer.parseInt(id);
 
+		int art_id = Integer.parseInt(request.getParameter("art_id"));
+
 	//	art = artDAO.selectArtdetail(art_id);
 		///////////////テスト用に固定値を使用/////////
 
-		session.setAttribute("artdata", art);
+		art = artDAO.selectImageById(art_id);
+		list = commentDAO.selectComment(art_id);
+
+
+		if(list.size() == 0){
+			session.setAttribute("message", "コメントはありません");
+		}
+
+		session.setAttribute("image", art);
+		session.setAttribute("artId", art_id);
+		session.setAttribute("commentList", list);
 
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
 		rd.forward(request, response);
@@ -51,6 +76,10 @@ public class V2ArtDetail extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
+		doGet(request, response);
 	}
+
 }
+
+
+

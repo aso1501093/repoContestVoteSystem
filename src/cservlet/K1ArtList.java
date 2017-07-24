@@ -53,6 +53,8 @@ public class K1ArtList extends HttpServlet {
 		// TODO Auto-generated method stub
 		//		String contestid= request.getParameter("contestid");
 		String contestid="1";
+		int i=4;
+	//
 
 		ArrayList<Art> artList=getArtList(1);
 

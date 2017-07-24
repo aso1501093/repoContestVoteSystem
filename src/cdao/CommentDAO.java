@@ -74,7 +74,7 @@ public class CommentDAO {
 
 
 	//コメント投稿
-	public void insertComment(Comment c, String comment){
+	public void insertComment(Comment c){
 
 		int art_id = c.getArt_id();
 		int user_id = c.getUser_id();
@@ -87,7 +87,7 @@ public class CommentDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, art_id);
 			stmt.setInt(2, user_id);
-			stmt.setString(3, comment);
+			stmt.setString(3,c.getComment());
 			stmt.executeUpdate();
 
 		}catch(Exception e){

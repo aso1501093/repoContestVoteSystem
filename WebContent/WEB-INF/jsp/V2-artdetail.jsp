@@ -9,40 +9,53 @@
 <title>作品詳細</title>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/jsp/header.jsp" />
+	<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<br>
 
 	<center>
-		<h1><c:out value="${ detailArt.title }"/></h1>
-	</center>
-	<br>
+		<form action="contestvote/V2Vote" method="POST">
+			<h1><c:out value="${ image.title }"/></h1>
+			<br>
 
-	<center>
+			<img border="0" width="300" height="300" src="<c:out value="${ image.base64Image }"/>"/>
+			<br>
 
+<<<<<<< HEAD
 		<img src="${ detailArt.img }" />
 		<br>
 s
 		<form action="/repContestVote/V2Vote" method="POST">
 			<input type="button" name="vote" value="投票する" />
+=======
+			<input type="button" value="投票する" />
+>>>>>>> branch 'master' of https://github.com/aso1501093/repoContestVoteSystem
 			<br>
 		</form>
-
-		<c:out value="${ detailArt.comment }" />
 		<br>
 
 		<div id="commentArea">
-			<c:forEach var="i" items="${detailArt}">
+			<c:if test="${ commentList.size() == 0 }">
+				<p align="center"><c:out value="${message}"/></p>
+			</c:if>
+
+			<c:if test="${ commentList.size() > 0 }">
 				<ul>
-					<li><c:out value="${ i.comment }" /></li>
+					<c:forEach var="list" items="${commentList}">
+						<li><c:out value="${ list.comment }"/></li>
+					</c:forEach>
 				</ul>
-			</c:forEach>
+			</c:if>
 		</div>
 
+<<<<<<< HEAD
 		<form action="/repoContestVoteSystem/V2Addcomment" method="POST">
+=======
+		<form action="contestvote/V2Contribution" method="POST">
+>>>>>>> branch 'master' of https://github.com/aso1501093/repoContestVoteSystem
 			<input type="text" name="comment" />
 			<br>
 
-			<input type="button" name="contribution" value="投稿" />
+			<input type="button" value="投稿" />
 		</form>
 	</center>
 </body>
