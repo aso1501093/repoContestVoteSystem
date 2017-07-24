@@ -102,4 +102,38 @@ public class CommentDAO {
 			}
 		}
 	}
+	
+	
+	public ArrayList<String> getCommentList(int artid){//過去の作品詳細でコメント一覧を取得
+		ArrayList<String> list=new ArrayList<>();
+		
+		try{
+			connection();
+			String sql = "SELECT comment from comment where art_id=? Order By comment_id ASC";
+
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, artid);
+			rs = stmt.executeQuery();
+
+			while(rs.next()){
+
+				list.add(rs.getString("comment"));
+				
+	
+			}
+		}catch(Exception e){
+			System.out.println(e);
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+				System.out.println(e);
+			}
+		}
+		for(String s:list){
+			System.out.println(s);
+		}
+
+		return list;
+	}
 }

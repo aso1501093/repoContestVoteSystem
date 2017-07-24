@@ -23,6 +23,8 @@ import javax.sql.DataSource;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
+import cdao.ArtDAO;
+import cdao.ContestDAO;
 import cmodel.Art;
 import cmodel.Comment;
 import cmodel.Contest;
@@ -51,12 +53,14 @@ public class K1ArtList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//		String contestid= request.getParameter("contestid");
+		//		String contestid= request.getParameter("contest_id");
 		String contestid="1";
 		int i=4;
 	//
+		ArtDAO ad=new ArtDAO();
+		
 
-		ArrayList<Art> artList=getArtList(1);
+		ArrayList<Art> artList=ad.getArtList(1);
 
 
 		//request.setAttribute("contest", contest);とりあえずいらない
@@ -77,70 +81,70 @@ public class K1ArtList extends HttpServlet {
 
 
 
-	public Connection connection() throws Exception {
-		if(ds == null){
-			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
-		}
-		con = ds.getConnection();
-
-		return con;
-		//Class.forName("com.mysql.jdbc.Driver");
-		//con = DriverManager.getConnection(
-		//		"jdbc:mysql://localhost:8890/ContestVote", "root", "root");
-		//return con;
-	}
-
-	public void close() throws Exception{
-		if(rs != null){
-			rs.close();
-		}
-		if(stmt != null){
-			stmt.close();
-		}
-		if(con != null){
-			con.close();
-		}
-	}
-
-	public ArrayList<Art> getArtList(int contestid){
-		ArrayList<Art> artlist=new ArrayList<>();
-		try{
-			connection();
-			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id,count(vote.user_id) as votenum, art.art_img_name FROM art LEFT OUTER JOIN vote ON art.art_id =vote.art_id WHERE art.contest_id = ? GROUP BY art.art_id";
-
-			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, contestid);
-			rs = stmt.executeQuery();
-
-			while(rs.next()){
-
-				Art art =new Art();
-				art.setArt_id(rs.getInt("art_id"));
-				art.setTitle(rs.getString("art_title"));
-				art.setContest_id(rs.getInt("contest_id"));
-				art.setVote_num(rs.getInt("votenum"));
-				art.setExtension(rs.getString("extension"));
-				InputStream is = rs.getBinaryStream("art_img_name");
-				ImageOperation io=new ImageOperation();
-				//			art.setBase64Image(io.convertBlobToBase64(is,art.getExtension()));
-				art.setBase64Image(io.convertBlobToBase64(is,art.getExtension()));
-				is.close();
-     			artlist.add(art);
-				
-	
-			}
-		}catch(Exception e){
-			System.out.println(e);
-		}finally{
-			try{
-				close();
-			}catch(Exception e){
-				System.out.println(e);
-			}
-		}
-		return artlist;
-
-	}
+//	public Connection connection() throws Exception {
+//		if(ds == null){
+//			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
+//		}
+//		con = ds.getConnection();
+//
+//		return con;
+//		//Class.forName("com.mysql.jdbc.Driver");
+//		//con = DriverManager.getConnection(
+//		//		"jdbc:mysql://localhost:8890/ContestVote", "root", "root");
+//		//return con;
+//	}
+//
+//	public void close() throws Exception{
+//		if(rs != null){
+//			rs.close();
+//		}
+//		if(stmt != null){
+//			stmt.close();
+//		}
+//		if(con != null){
+//			con.close();
+//		}
+//	}
+//
+//	public ArrayList<Art> getArtList(int contestid){
+//		ArrayList<Art> artlist=new ArrayList<>();
+//		try{
+//			connection();
+//			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id,count(vote.user_id) as votenum, art.art_img_name FROM art LEFT OUTER JOIN vote ON art.art_id =vote.art_id WHERE art.contest_id = ? GROUP BY art.art_id";
+//
+//			stmt = con.prepareStatement(sql);
+//			stmt.setInt(1, contestid);
+//			rs = stmt.executeQuery();
+//
+//			while(rs.next()){
+//
+//				Art art =new Art();
+//				art.setArt_id(rs.getInt("art_id"));
+//				art.setTitle(rs.getString("art_title"));
+//				art.setContest_id(rs.getInt("contest_id"));
+//				art.setVote_num(rs.getInt("votenum"));
+//				art.setExtension(rs.getString("extension"));
+//				InputStream is = rs.getBinaryStream("art_img_name");
+//				ImageOperation io=new ImageOperation();
+//				//			art.setBase64Image(io.convertBlobToBase64(is,art.getExtension()));
+//				art.setBase64Image(io.convertBlobToBase64(is,art.getExtension()));
+//				is.close();
+//     			artlist.add(art);
+//				
+//	
+//			}
+//		}catch(Exception e){
+//			System.out.println(e);
+//		}finally{
+//			try{
+//				close();
+//			}catch(Exception e){
+//				System.out.println(e);
+//			}
+//		}
+//		return artlist;
+//
+//	}
 
 
 //	public String test(int contestid){
