@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.naming.InitialContext;
@@ -19,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -61,8 +63,18 @@ public class K1ArtList extends HttpServlet {
 		
 
 		ArrayList<Art> artList=ad.getArtList(1);
+		List<Art> toplist;
+		List<Art> extralist;
+		toplist= artList.subList(0,4);
+		extralist=artList.subList(4, artList.size());
+		
+		System.out.println("artlist"+artList.size());
+		System.out.println("toplist"+toplist.size());
+		System.out.println("extralist"+extralist.size());
 
-
+		HttpSession session = request.getSession();
+		session.setAttribute("toplist",toplist );
+		session.setAttribute("extralist",extralist );
 		//request.setAttribute("contest", contest);とりあえずいらない
 		request.setAttribute("artlist", artList);
 		//request.setAttribute("art", test(1));
