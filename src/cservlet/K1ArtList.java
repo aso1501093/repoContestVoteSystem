@@ -71,12 +71,17 @@ public class K1ArtList extends HttpServlet {
 		System.out.println("artlist"+artList.size());
 		System.out.println("toplist"+toplist.size());
 		System.out.println("extralist"+extralist.size());
+		int votesum=0;
+		for(Art art:artList){
+		votesum+=art.getVote_num();
+		}
 
 		HttpSession session = request.getSession();
 		session.setAttribute("toplist",toplist );
 		session.setAttribute("extralist",extralist );
+		session.setAttribute("votesum",votesum);
 		//request.setAttribute("contest", contest);とりあえずいらない
-		request.setAttribute("artlist", artList);
+		
 		//request.setAttribute("art", test(1));
 
 		RequestDispatcher dp=request.getRequestDispatcher("/WEB-INF/jsp/K1-ranking.jsp");

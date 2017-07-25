@@ -10,9 +10,7 @@
 <body>
 画像<img src="${art.base64Image }"><br>
 タイトル<c:out value="${art.title }"/><br>
-アートID${art.art_id }<br>
-コンテストID${art.contest_id }<br><br>
-<p>獲得票数:<c:out value="${art.vote_num }"/></p><br><br>
+<p>獲得票数:<c:out value="${art.vote_num }"/>票</p><br><br>
 
 <c:forEach var="comments" items="${commentlist}" varStatus="loop">
 ${comments }<br>
