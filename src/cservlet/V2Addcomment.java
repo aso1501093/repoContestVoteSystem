@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
-import javax.naming.InitialContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,36 +43,73 @@ public class V2Addcomment extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
-		rd.forward(request, response);
+////		System.out.println("test1");
+////
+////
+//		HttpSession session = request.getSession();
+//		CommentDAO commentDAO = new CommentDAO();
+//		Comment c = new Comment();
+////
+////		//ユーザ情報と表示中作品情報取得
+////		User user = (User)session.getAttribute("user");
+//		int artId = (int) session.getAttribute("artId");
+//
+//
+////		//コメント取得+modelへのセット
+//		String comment = request.getParameter("comment");
+////
+//		c.setComment(comment);
+//		c.setArt_id(artId);
+////		c.setUser_id(user.getUser_id());
+//		c.setUser_id(1501155);
+//
+//		//コメントの投稿
+//		commentDAO.insertComment(c);
+//
+//		//最新のコメント一覧取得
+//		ArrayList<Comment> list = new ArrayList<Comment>();
+//		list =commentDAO.selectComment(artId);
+//		session.setAttribute("commentList", list);
+//
+//
+//
+//
+//		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
+//		rd.forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-
-
+//		System.out.println("test1");
+//
+//
 		HttpSession session = request.getSession();
 		CommentDAO commentDAO = new CommentDAO();
 		Comment c = new Comment();
+//
+//		//ユーザ情報と表示中作品情報取得
+//		User use  = (User) session.getAttribute("user");
+		int artId = (int) session.getAttribute("artId");
 
-		//ユーザ情報と表示中作品情報取得
-//		User user = (User)session.getAttribute("user");
-//		Art art = (Art) session.getAttribute("artdata");
 
-		//コメント取得+modelへのセット
+//		//コメント取得+modelへのセット
 		String comment = request.getParameter("comment");
+//
 		c.setComment(comment);
-//		c.setArt_id(art.getArt_id());
+		c.setArt_id(artId);
 //		c.setUser_id(user.getUser_id());
-		//コメントの投稿
-		c.setArt_id(1);
 		c.setUser_id(1501155);
+		System.out.println("アートID"+artId);
 
+		//コメントの投稿
 		commentDAO.insertComment(c);
 
+		//最新のコメント一覧取得
+		ArrayList<Comment> list = new ArrayList<Comment>();
+		list =commentDAO.selectComment(artId);
+		session.setAttribute("commentList", list);
 
 
 
@@ -82,53 +119,7 @@ public class V2Addcomment extends HttpServlet {
 	}
 
 
-	/////////////////////////////insertDAOの処理///////////////////////////////////////////////
-	public Connection connection() throws Exception {
-		if(ds == null){
-			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
-		}
-		con = ds.getConnection();
 
-		return con;
-	}
-	public void close() throws Exception{
-		if(rs != null){
-			rs.close();
-		}
-		if(stmt != null){
-			stmt.close();
-		}
-		if(con != null){
-			con.close();
-		}
-	}
-	public void insertComment(Comment c, String comment){
-
-		int art_id = c.getArt_id();
-		int user_id = c.getUser_id();
-
-		try{
-			connection();
-
-			String sql = "INSERT INTO comment(art_id, user_id, comment)"
-					+ "VALUES (?,?,?)";
-			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, art_id);
-			stmt.setInt(2, user_id);
-			stmt.setString(3, comment);
-			stmt.executeUpdate();
-
-		}catch(Exception e){
-			System.out.println(e);
-		}finally{
-			try{
-				close();
-			}catch(Exception e){
-				System.out.println(e);
-			}
-		}
-	}
-	//////////////////////////////////////////////////////////////////////////////////
 }
 
 
