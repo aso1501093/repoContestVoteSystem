@@ -95,7 +95,7 @@ function formData(contestid){
 
 <center>
 <br><br>
-<h1>浴衣コンテスト　結果発表</h1>
+<h1><c:out value="${contestname }"/>　結果発表</h1>
 <table class="ranking-table">
 
 <c:forEach var="arts" items="${toplist}" varStatus="loop">

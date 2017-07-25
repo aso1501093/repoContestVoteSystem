@@ -153,4 +153,34 @@ public ArrayList<Contest> getPastContest(String date){
 	return list;
 }
 
+public String getContestName(int contestid){
+	String contestname="ななし";
+
+	try{
+		connection();
+
+		String sql = "SELECT contest_name FROM contest "
+				+ "WHERE contest_id=  ?";
+		stmt = con.prepareStatement(sql);
+		stmt.setInt(1,contestid);
+		rs = stmt.executeQuery();
+		
+		
+		if(rs.next()){
+			contestname=rs.getString("contest_name");
+		}
+
+	}catch(Exception e){
+		System.out.println("databaseerror"+e);
+	}finally{
+		try{
+			close();
+		}catch(Exception e){
+			System.out.println("2databaseerror"+e);
+		}
+	}
+	
+	return contestname;
+}
+
 }

@@ -55,14 +55,18 @@ public class K1ArtList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//		String contestid= request.getParameter("contest_id");
-		String contestid="1";
-		int i=4;
+		String contestid= request.getParameter("contest_id");
+		int contest_id=Integer.parseInt(contestid);
+		ContestDAO cd=new ContestDAO();
+		String contestname=cd.getContestName(contest_id);
+		
+		//String contestid="1";
+
 	//
 		ArtDAO ad=new ArtDAO();
 		
 
-		ArrayList<Art> artList=ad.getArtList(1);
+		ArrayList<Art> artList=ad.getArtList(contest_id);
 		List<Art> toplist;
 		List<Art> extralist;
 		toplist= artList.subList(0,4);
@@ -80,6 +84,7 @@ public class K1ArtList extends HttpServlet {
 		session.setAttribute("toplist",toplist );
 		session.setAttribute("extralist",extralist );
 		session.setAttribute("votesum",votesum);
+		request.setAttribute("contestname", contestname);
 		//request.setAttribute("contest", contest);とりあえずいらない
 		
 		//request.setAttribute("art", test(1));

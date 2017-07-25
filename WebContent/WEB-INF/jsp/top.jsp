@@ -52,7 +52,7 @@
 			+ '<table>'
 	    		+ '<c:forEach var="past" items="${pastContest}">'
 					+ '<tr>'
-						+ '<td><a href="K1ArtList?contest_id=${vote.contest_id}"><c:out value="${past.name}" /></a></td>'
+						+ '<td><a href="K1ArtList?contest_id=${past.contest_id}"><c:out value="${past.name}" /></a></td>'
 						+ '<td><c:out value="${past.start_date}" />~<c:out value="${past.end_date}" /></td>'
 					+ '</tr>'
 				+ '</c:forEach>'
