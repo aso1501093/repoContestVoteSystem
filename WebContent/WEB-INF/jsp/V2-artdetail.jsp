@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/jsp/common.jsp"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="stylesheet" href="css/main.css">
@@ -19,7 +19,7 @@
 			</h1>
 			<br> <img border="0" width="300" height="300"
 				src="<c:out value="${ image.base64Image }"/>" /> <br> <input
-				type="button" name="vote" value="投票する" /> <br>
+				type="submit" name="vote" value="投票する" /> <br>
 		</form>
 
 

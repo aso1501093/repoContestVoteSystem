@@ -17,6 +17,7 @@ import javax.sql.DataSource;
 
 import cdao.CommentDAO;
 import cmodel.Comment;
+import cmodel.User;
 
 
 /**
@@ -90,7 +91,7 @@ public class V2Addcomment extends HttpServlet {
 		Comment c = new Comment();
 //
 //		//ユーザ情報と表示中作品情報取得
-//		User use  = (User) session.getAttribute("user");
+		User user  = (User) session.getAttribute("user");
 		int artId = (int) session.getAttribute("artId");
 
 
@@ -99,8 +100,8 @@ public class V2Addcomment extends HttpServlet {
 //
 		c.setComment(comment);
 		c.setArt_id(artId);
-//		c.setUser_id(user.getUser_id());
-		c.setUser_id(1501155);
+		c.setUser_id(user.getUser_id());
+//		c.setUser_id(1501155);
 		System.out.println("アートID"+artId);
 
 		//コメントの投稿

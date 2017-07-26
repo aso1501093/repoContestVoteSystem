@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>応募作品一覧</title>
-<link rel="stylesheet" type="text/css" href="/contestvote/css/main.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <script type="text/javascript">
 function formData(contestid){
 	// フォームタグを生成
@@ -42,7 +42,7 @@ function formData(contestid){
 
 	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 
-	<div class="back">
+	<div class="k2back">
 		<a>応募総数:<c:out value="${ extralist.size()}"/>点<br>投票総数:<c:out value="${votesum }"/>
 		</a>
 	</div>
