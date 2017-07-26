@@ -4,15 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import cmodel.Comment;
 import cmodel.Contest;
-import cmodel.User;
 
 
 
@@ -182,5 +178,6 @@ public String getContestName(int contestid){
 	
 	return contestname;
 }
+
 
 }

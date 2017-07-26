@@ -104,135 +104,52 @@
 	<br><br>
 
 
+<body class="back">
+	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
+
+	<center>
+	<h1>浴衣写真コンテスト</h1>
+	<table>
+		<tr>
+			<th>テーマ</th>
+			<td>人物の浴衣姿を含む写真</td>
+		</tr>
+		<tr>
+			<th>応募期間</th>
+			<td>2017年6月20日～2017年9月20日</td>
+		</tr>
+		<tr>
+			<th>投票期間</th>
+			<td>2017年9月21日～2017年9月30日</td>
+		</tr>
+		<tr>
+			<th>応募資格</th>
+			<td>・日本国内にお住まいの方(日本国内で賞品の受け取りが可能な方)
+			<br>・応募点数に制限はございません
+			<br>・過去に受賞した作品の応募はご遠慮ください
+			</td>
+		</tr>
+		<tr>
+			<th>賞品</th>
+			<td>グランプリ:30,000円(1名)
+			<br>優秀賞:10,000円(3名)
+			</td>
+		</tr>
+	</table>
+	</center>
+	<br><br>
+
+<c:forEach var="arts" items="${artList}" varStatus="loop">
 	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
+		<a href="/Contest/V2ArtDetail?art_id=<c:out value="${ arts.art_id }"/>"><figure> <img src="${arts.base64Image}" width="300" height="210" />
 		<figcaption>
 		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
+		<p><c:out value="${arts.title}"/></p>
+		</figcaption> </figure></a>
 	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-
-	<br>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-
-	<br>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-
-	<br>
+</c:forEach>
 
 
 </body>
+
 </html>

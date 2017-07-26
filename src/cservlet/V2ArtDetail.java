@@ -65,6 +65,7 @@ public class V2ArtDetail extends HttpServlet {
 
 		session.setAttribute("image", art);
 		session.setAttribute("artId", art_id);
+		System.out.println("セッションに格納するアートID "+art_id);
 		session.setAttribute("commentList", list);
 
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");

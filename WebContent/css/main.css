@@ -22,6 +22,91 @@
 
 
 
+/* L1ログイン */
+.login-content {
+	background-color: #c0c0c0;
+	height: 100%;
+}
+.login-form {
+	width: 800px;
+	height: 550px;
+	background-color: #FFFFFF;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+a.login-button {
+  line-height: 32px;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+  text-align: center;
+}
+a.login-button span {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  background: #0FA7A9;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+a.login-button span::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0A8184;
+  content: attr(data-hover);
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+a.login-button:hover span,
+a.login-button:focus span {
+  -webkit-transform: rotateX(90deg) translateY(-22px);
+  -moz-transform: rotateX(90deg) translateY(-22px);
+  transform: rotateX(90deg) translateY(-22px);
+}
+a.login-button:hover span::before,
+a.login-button:focus span::before {
+  background: #0FA7A9;
+}
+.newuser {
+    color: #fff;
+    text-decoration: none;
+    background-color: #dda0dd;
+    display: block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    /* ここで動く速度とか設定 */
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+.newuser:hover {
+    transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
+}
+
+
+
+
+
 /* K1結果発表 */
 .ranking-tr {
 	height: 350px;
@@ -65,6 +150,166 @@
     box-shadow:
         0 0 0 25px #fff,
         0 0 0 27px #dda284;
+}
+
+
+
+
+
+/* K2応募作品一覧 */
+/* 総数固定 */
+.k2back {
+ position: fixed;
+ bottom: 50%;
+ right: 30px;
+
+ border:1px solid #ffff80;
+ padding:2pt;
+ background-color: #ffff80;
+ filter:alpha(opacity=85);
+ -moz-opacity:0.85;
+ -khtml-opacity: 0.85;
+ opacity:0.85;
+
+ text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+ -webkit-box-shadow: 1px 1px 2px #E7E7E7;
+ -moz-box-shadow: 1px 1px 2px #E7E7E7;
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+
+	font-size: 15px;
+	float: center;
+	border: 1px solid #2fa6fd;
+	background-color: #B2EBF2;
+	color: #757575;
+	width: 120px;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 50px;
+
+}
+
+
+
+
+
+/* L2新規登録 */
+.l2td {
+	width: 100px;
+}
+.modoru {
+	font-size: 16px;
+	float: center;
+	border: 1px solid #2fa6fd;
+	background-color: #B2EBF2;
+	color: #757575;
+	width: 100px;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 8px;
+}
+.modoru:hover {
+	background-color: #E0F7FA;
+}
+a.modoru-button {
+  line-height: 32px;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+  text-align: center;
+}
+a.modoru-button span {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  background: #0FA7A9;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+a.modoru-button span::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0A8184;
+  content: attr(data-hover);
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+a.modoru-button:hover span,
+a.modoru-button:focus span {
+  -webkit-transform: rotateX(90deg) translateY(-22px);
+  -moz-transform: rotateX(90deg) translateY(-22px);
+  transform: rotateX(90deg) translateY(-22px);
+}
+a.modoru-button:hover span::before,
+a.modoru-button:focus span::before {
+  background: #0FA7A9;
+}
+a.touroku-button {
+  line-height: 32px;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+  text-align: center;
+}
+a.touroku-button span {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  background: #0FA7A9;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+a.touroku-button span::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0A8184;
+  content: attr(data-hover);
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+a.touroku-button:hover span,
+a.touroku-button:focus span {
+  -webkit-transform: rotateX(90deg) translateY(-22px);
+  -moz-transform: rotateX(90deg) translateY(-22px);
+  transform: rotateX(90deg) translateY(-22px);
+}
+a.touroku-button:hover span::before,
+a.touroku-button:focus span::before {
+  background: #0FA7A9;
 }
 
 
@@ -147,7 +392,6 @@ figure:hover figcaption {
     -o-transform: scale(1, 1);
     -ms-transition: scale(1, 1);
 }
-
 
 
 

@@ -37,19 +37,25 @@ public class VoteDAO {
 
 
 	public void Vote(Vote v){
+		int userId = v.getUser_id();
+		System.out.println("ユーザーID"+v.getUser_id());
+		int artId = v.getArt_id();
+		System.out.println("アートID"+v.getArt_id());
+		int contestId = v.getContest_id();
+		System.out.println("コンテストID"+v.getContest_id());
 		 try{
 	            connection();
 
-	            String sql = "INSERT INTO comment(user_id,contest_id,art_id) VALUES(?.?.?) ";
+	            String sql = "INSERT INTO vote(user_id,contest_id,art_id) "
+	            		+ "VALUES(?,?,?)";
 	            stmt = con.prepareStatement(sql);
-	            stmt.setInt(1, v.getUser_id());
-	            stmt.setInt(2, v.getContest_id());
-	            stmt.setInt(3, v.getArt_id());
-
+	            stmt.setInt(1, userId);
+	            stmt.setInt(2, contestId);
+	            stmt.setInt(3, artId);
 
 	            stmt.executeUpdate();
 
-	            System.out.println(sql);
+
 
 	        }catch(Exception e){
 	            System.out.println("Inserterror1"+e);

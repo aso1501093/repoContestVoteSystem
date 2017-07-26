@@ -33,15 +33,10 @@ public class Logout extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
 		RequestDispatcher rd;
-		if(true){
 			session.invalidate();
-			rd = request.getRequestDispatcher("WEB-INF/jsp/");
+			rd = request.getRequestDispatcher("L1login.jsp");
 			rd.forward(request, response);
-		} else{
-			session.invalidate();
-			rd = request.getRequestDispatcher("WEB-INF/jsp/");
-			rd.forward(request, response);
-		}
+
 	}
 
 	/**

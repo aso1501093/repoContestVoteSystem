@@ -46,7 +46,7 @@ public class CommentDAO {
 
 			String sql = "SELECT comment FROM comment WHERE art_id = ?";
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(2, art_id);
+			stmt.setInt(1, art_id);
 			rs = stmt.executeQuery();
 
 			while(rs.next()){
@@ -102,11 +102,11 @@ public class CommentDAO {
 			}
 		}
 	}
-	
-	
+
+
 	public ArrayList<String> getCommentList(int artid){//過去の作品詳細でコメント一覧を取得
 		ArrayList<String> list=new ArrayList<>();
-		
+
 		try{
 			connection();
 			String sql = "SELECT comment from comment where art_id=? Order By comment_id ASC";
@@ -118,8 +118,8 @@ public class CommentDAO {
 			while(rs.next()){
 
 				list.add(rs.getString("comment"));
-				
-	
+
+
 			}
 		}catch(Exception e){
 			System.out.println(e);
