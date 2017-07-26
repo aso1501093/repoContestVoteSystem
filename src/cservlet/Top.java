@@ -39,7 +39,7 @@ public class Top extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		RequestDispatcher rd=request.getRequestDispatcher("WEB-INF/jsp/");
+		RequestDispatcher rd=request.getRequestDispatcher("WEB-INF/jsp/top.jsp");
 		rd.forward(request, response);
 
 
