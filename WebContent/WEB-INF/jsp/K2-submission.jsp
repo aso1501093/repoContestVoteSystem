@@ -41,6 +41,7 @@ function formData(contestid){
 <body>
 
 	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
+	<br clear="left">
 
 	<div class="k2back">
 		<a>応募総数:<c:out value="${ extralist.size()}"/>点<br>投票総数:<c:out value="${votesum }"/>
