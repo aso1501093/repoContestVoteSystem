@@ -13,22 +13,20 @@
 	<br>
 
 	<center>
-		<form action="contestvote/V2Vote" method="POST">
+		<form action="V2Vote" method="POST">
 			<h1><c:out value="${ image.title }"/></h1>
 			<br>
 
 			<img border="0" width="300" height="300" src="<c:out value="${ image.base64Image }"/>"/>
 			<br>
 
-<<<<<<< HEAD
+
 		<img src="${ detailArt.img }" />
 		<br>
-s
-		<form action="/repContestVote/V2Vote" method="POST">
 			<input type="button" name="vote" value="投票する" />
-=======
+
 			<input type="button" value="投票する" />
->>>>>>> branch 'master' of https://github.com/aso1501093/repoContestVoteSystem
+
 			<br>
 		</form>
 		<br>
@@ -46,24 +44,15 @@ s
 				</ul>
 			</c:if>
 		</div>
+		<form action="V2Addcomment" method="POST">
 
-<<<<<<< HEAD
-		<form action="/repoContestVoteSystem/V2Addcomment" method="POST">
-=======
-		<form action="contestvote/V2Contribution" method="POST">
->>>>>>> branch 'master' of https://github.com/aso1501093/repoContestVoteSystem
+
 			<input type="text" name="comment" />
 			<br>
 
-			<input type="button" value="投稿" />
+			<input type="submit" value="投稿" />
 		</form>
 
-	<%-- 岩永追加分 --%>
-			<div id="btn">
-		<a href="javascript:void(0);">投票する</a>
-	</div>
-	<br><br>
-	<%-- end --%>
 	</center>
 </body>
 </html>

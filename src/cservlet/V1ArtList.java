@@ -42,8 +42,7 @@ public class V1ArtList extends HttpServlet {
 		int user_id = 1501155;
 
 		list = artDAO.selectImageByIdList(contest_id);
-		contest = contestDAO.selectContestName(contest_id);
-
+		contest = contestDAO.selectContestName(contest_id);		
 
 		session.setAttribute("contestName", contest);
 		session.setAttribute("artList", list);
