@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.naming.InitialContext;
@@ -19,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -53,18 +55,38 @@ public class K1ArtList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//		String contestid= request.getParameter("contest_id");
-		String contestid="1";
-		int i=4;
+		String contestid= request.getParameter("contest_id");
+		int contest_id=Integer.parseInt(contestid);
+		ContestDAO cd=new ContestDAO();
+		String contestname=cd.getContestName(contest_id);
+		
+		//String contestid="1";
+
 	//
 		ArtDAO ad=new ArtDAO();
 		
 
-		ArrayList<Art> artList=ad.getArtList(1);
+		ArrayList<Art> artList=ad.getArtList(contest_id);
+		List<Art> toplist;
+		List<Art> extralist;
+		toplist= artList.subList(0,4);
+		extralist=artList.subList(4, artList.size());
+		
+		System.out.println("artlist"+artList.size());
+		System.out.println("toplist"+toplist.size());
+		System.out.println("extralist"+extralist.size());
+		int votesum=0;
+		for(Art art:artList){
+		votesum+=art.getVote_num();
+		}
 
-
+		HttpSession session = request.getSession();
+		session.setAttribute("toplist",toplist );
+		session.setAttribute("extralist",extralist );
+		session.setAttribute("votesum",votesum);
+		request.setAttribute("contestname", contestname);
 		//request.setAttribute("contest", contest);とりあえずいらない
-		request.setAttribute("artlist", artList);
+		
 		//request.setAttribute("art", test(1));
 
 		RequestDispatcher dp=request.getRequestDispatcher("/WEB-INF/jsp/K1-ranking.jsp");

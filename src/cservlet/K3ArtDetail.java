@@ -56,7 +56,7 @@ public class K3ArtDetail extends HttpServlet {
 		
 		//コメント取得
 		CommentDAO cd=new CommentDAO();
-		ArrayList<String> list=cd.getCommentList(1);//取得確認
+		ArrayList<String> list=cd.getCommentList(artid);//取得確認
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("art", art);

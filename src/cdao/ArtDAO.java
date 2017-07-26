@@ -122,7 +122,7 @@ public class ArtDAO {
 		ArrayList<Art> artlist=new ArrayList<>();
 		try{
 			connection();
-			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id,count(vote.user_id) as votenum, art.art_img_name FROM art LEFT OUTER JOIN vote ON art.art_id =vote.art_id WHERE art.contest_id = ? GROUP BY art.art_id";
+			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id,count(vote.user_id) as votenum, art.art_img_name FROM art LEFT OUTER JOIN vote ON art.art_id =vote.art_id WHERE art.contest_id = ? GROUP BY art.art_id ORDER BY votenum DESC";
 
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, contestid);
@@ -163,7 +163,7 @@ public class ArtDAO {
 		
 		try{
 			connection();
-			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id, art.art_img_name FROM art  WHERE art.art_id = ? ";
+			String sql = "SELECT art.extension,art.art_id,art.art_title ,art.contest_id, art.art_img_name,count(vote.user_id) as votenum from art LEFT OUTER JOIN vote ON art.art_id =vote.art_id WHERE art.art_id = ? ";
 
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, artid);
@@ -174,7 +174,8 @@ public class ArtDAO {
 				art.setArt_id(rs.getInt("art.art_id"));
 				art.setContest_id(rs.getInt("art.contest_id"));
 				art.setTitle(rs.getString("art.art_title"));
-				art.setBase64Image(io.convertBlobToBase64(rs.getBinaryStream("art_img_name"), rs.getString("art.extension")));	
+				art.setBase64Image(io.convertBlobToBase64(rs.getBinaryStream("art_img_name"), rs.getString("art.extension")));
+				art.setVote_num(rs.getInt("votenum"));
 			}
 		}catch(Exception e){
 			System.out.println(e);

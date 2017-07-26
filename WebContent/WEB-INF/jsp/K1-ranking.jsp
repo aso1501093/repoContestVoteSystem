@@ -95,16 +95,23 @@ function formData(contestid){
 
 <center>
 <br><br>
-<h1>浴衣コンテスト　結果発表</h1>
+<h1><c:out value="${contestname }"/>　結果発表</h1>
 <table class="ranking-table">
-<tr class="ranking-tr"><th class="ranking-th">グランプリ</th><td><img src="img/IMG_1503.JPG" width="360" height="250"></td><td class="ranking-td">タイトル:～～<br>320票</td></tr>
-<tr class="ranking-tr"><th class="ranking-th">優秀賞</th><td><img src="img/IMG_1503.JPG" width="360" height="250"></td><td class="ranking-td">タイトル:～～<br>280票</td></tr>
-<tr class="ranking-tr"><th class="ranking-th">優秀賞</th><td><img src="img/IMG_1503.JPG" width="360" height="250"></td><td class="ranking-td">タイトル:～～<br>250票</td></tr>
-<tr class="ranking-tr"><th class="ranking-th">優秀賞</th><td><img src="img/IMG_1503.JPG" width="360" height="250"></td><td class="ranking-td">タイトル:～～<br>200票</td></tr>
+
+<c:forEach var="arts" items="${toplist}" varStatus="loop">
+
+<c:if test="${!loop.first }">
+<tr class="ranking-tr" onclick="formData(${ arts.art_id});"><th class="ranking-th" >優秀賞</th><td><img src="${arts.base64Image}" width="360" height="250"></td><td class="ranking-td">タイトル:<c:out value="${arts.title}"/><br><c:out value="${ arts.vote_num}"/>票</td></tr>
+</c:if>
+
+<c:if test="${loop.first }">
+<tr class="ranking-tr" onclick="formData(${ arts.art_id});"><th class="ranking-th">グランプリ</th><td><img src="${arts.base64Image}" width="360" height="250"></td><td class="ranking-td">タイトル:<c:out value="${arts.title}"/><br><c:out value="${ arts.vote_num}"/>票</td></tr>
+</c:if>
+</c:forEach>
 </table>
 
 <br>
-<a href="" class="k1button">応募作品の一覧</a>
+<a href="/Contest/K2ArtList" class="k1button">応募作品の一覧</a>
 <br><br>
 </center>
 

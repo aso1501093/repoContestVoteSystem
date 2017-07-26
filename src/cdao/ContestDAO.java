@@ -72,17 +72,7 @@ public class ContestDAO {
 		}
 
 		return null;
-	}
-
-
-	
-	
-	
-
-	
-
-
-		
+	}	
 
 public ArrayList<Contest> getVoteContest(String date){
 	
@@ -162,6 +152,9 @@ public ArrayList<Contest> getPastContest(String date){
 
 	return list;
 }
+
+
+
 public String getContestName(int contestid){
 	String contestname="ななし";
 
@@ -191,7 +184,5 @@ public String getContestName(int contestid){
 	
 	return contestname;
 }
-
-
 
 }
