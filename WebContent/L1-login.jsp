@@ -9,6 +9,13 @@
 <title>ログイン</title>
 <link rel="stylesheet" href="css/bootstrap-3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/main.css" />
+<script type="text/javascript">
+function formData(){
+	// フォームタグを生成
+	var form = document.getElementById('form');
+	form.submit();
+}
+</script>
 </head>
 
 <body class="login-content">
@@ -17,12 +24,12 @@
 	<h1>コンテスト投票</h1>
 	<h2><font color="red"><c:out value="${error}" /></font></h2>
 
-	<form method="POST" action="T1Login">
+	<form method="POST" action="T1Login" id="form">
 			<!-- ユーザID -->
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="InputID">学生ID</label>
 				<div class="col-sm-5">
-					<input type="text" name="memberId" class="form-control"
+					<input type="text"  class="form-control" name="id"
 						id="InputID">
 				</div>
 			</div>
@@ -33,7 +40,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="InputPassword">パスワード</label>
 				<div class="col-sm-5">
-					<input type="password" name="password" class="form-control"
+					<input type="password"  class="form-control" name="pass"
 						id="InputPassword">
 				</div>
 			</div>
@@ -41,7 +48,7 @@
 			<br>
 			<br>
 			<!-- 送信ボタン -->
-			<a class="login-button" href="T1Login"><span data-hover="ログイン">Login</span></a>
+			<a class="login-button" onclick="formData();"><span data-hover="ログイン">Login</span></a>
 			<br>
 			<br>
 			<br>
