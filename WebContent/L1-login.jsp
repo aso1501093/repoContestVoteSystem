@@ -40,7 +40,7 @@ function formData(){
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="InputPassword">パスワード</label>
 				<div class="col-sm-5">
-					<input type="password"  class="form-control" name="pass"
+					<input type="password" class="form-control" name="pass"
 						id="InputPassword">
 				</div>
 			</div>
@@ -73,7 +73,7 @@ function formData(){
 	 --%>
 
 	<p>まだ登録されてない方はこちら</p><br>
-	<a href="#" class="newuser">新規登録</a>
+	<a onclick="javascript:location.href='L2-regist.jsp';" class="newuser">新規登録</a>
 	<%--
 	<button onclick="javascript:location.href='L2-regist.jsp';">新規登録</button>
 	 --%>
