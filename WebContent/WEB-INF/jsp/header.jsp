@@ -9,9 +9,6 @@
 	<div
 		style="text-align: right; font-size: 20px; width: 330px; padding: 4px; float: right;">
 
-		ようこそ&nbsp;
-		<c:out value="${CommonLoginMember.memberName}" />
-		&nbsp; 様 &nbsp; <br>
 
 		<%-- ログイン時 --%>
 
