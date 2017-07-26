@@ -9,7 +9,7 @@
 <title>投票受付中作品一覧</title>
 </head>
 
-<%--
+
 <body>
 	<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<br>
@@ -62,9 +62,9 @@
 		</table>
 	</center>
 </body>
- --%>
 
 
+<%--
 
 <body class="back">
 	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
@@ -233,4 +233,5 @@
 
 
 </body>
+--%>
 </html>
