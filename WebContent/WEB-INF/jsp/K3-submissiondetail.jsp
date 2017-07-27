@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 タイトル:<c:out value="${art.title }"/><br>
 <p>獲得票数:<c:out value="${art.vote_num }"/>票</p><br><br>
 
