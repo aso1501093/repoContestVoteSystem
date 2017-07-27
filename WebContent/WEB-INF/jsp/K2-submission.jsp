@@ -49,7 +49,9 @@ function formData(contestid){
 	</div>
 <c:forEach var="arts" items="${extralist}" varStatus="loop">
 	<div class="img-left">
-		<figure onclick="formData(${ arts.art_id});"> <img src="${arts.base64Image}" width="300" height="210" />
+
+	<figure onclick="formData(${ arts.art_id});"> <img src="${arts.base64Image}" width="300" height="210" />
+
 		<figcaption>
 		<h3>作品タイトル</h3>
 		<p><c:out value="${arts.title}"/></p>
