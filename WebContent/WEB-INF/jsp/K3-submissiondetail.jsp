@@ -14,7 +14,6 @@
 
 <c:forEach var="comments" items="${commentlist}" varStatus="loop">
 ${comments }<br>
-
 </c:forEach>
 
 <form action="/Contest/K3AddComment" method="post">
