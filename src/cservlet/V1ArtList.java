@@ -39,16 +39,16 @@ public class V1ArtList extends HttpServlet {
 
 		//int contest_id = Integer.parseInt(request.getParameter("contest_id"));
 		int contest_id = 1;
-		int user_id = 1501155;
+//	int user_id = 1501155;
+//		 User user = (User)session.getAttribute("user");
 
 		list = artDAO.selectImageByIdList(contest_id);
 		contest = contestDAO.selectContestName(contest_id);
 
-
 		session.setAttribute("contestName", contest);
 		session.setAttribute("artList", list);
 		session.setAttribute("contestId", contest_id);
-		session.setAttribute("userId", user_id);
+	//	session.setAttribute("userId", user_id);
 
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/V1-artlist.jsp");
 		rd.forward(request, response);

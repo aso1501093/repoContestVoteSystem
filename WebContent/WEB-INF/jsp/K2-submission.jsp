@@ -42,13 +42,16 @@ function formData(contestid){
 
 	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 	<br clear="left">
+
 	<div class="k2back">
 		<a>応募総数:<c:out value="${ extralist.size()}"/>点<br>投票総数:<c:out value="${votesum }"/>
 		</a>
 	</div>
 <c:forEach var="arts" items="${extralist}" varStatus="loop">
 	<div class="img-left">
+
 	<figure onclick="formData(${ arts.art_id});"> <img src="${arts.base64Image}" width="300" height="210" />
+
 		<figcaption>
 		<h3>作品タイトル</h3>
 		<p><c:out value="${arts.title}"/></p>
