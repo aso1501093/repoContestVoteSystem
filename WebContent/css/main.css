@@ -160,7 +160,7 @@ a.login-button:focus span::before {
 /* 総数固定 */
 .k2back {
  position: fixed;
- bottom: 50%;
+ top: 120px;
  right: 30px;
 
  border:1px solid #ffff80;
@@ -396,7 +396,7 @@ figure:hover figcaption {
 
 
 
-.back {
+.k2back {
  position: fixed;
  bottom: 50%;
  right: 30px;

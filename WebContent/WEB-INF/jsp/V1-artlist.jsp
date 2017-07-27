@@ -8,66 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>投票受付中作品一覧</title>
 </head>
-
-<%--
-<body>
-	<jsp:include page="/WEB-INF/jsp/header.jsp"/>
-	<br>
-
-
-
-	<center>
-		<h1><c:out value="${contestName.name}"/></h1>
-
-		<table border="1">
-			<c:forEach var="list" items="${artList}" varStatus="status">
-				<c:if test="${ status.first }">
-					<tr>
-				</c:if>
-
-						<td>
-							<p align="center"><a href="/Contest/V2ArtDetail?art_id=<c:out value="${ list.art_id }"/>">${ list.title }</a></p>
-							<p align="center">
-								<a href="/Contest/V2ArtDetail?art_id=<c:out value="${ list.art_id }"/>">
-									<img border="0" width="100" height="100" src="<c:out value="${ list.base64Image }"/>"/>
-								</a>
-							</p>
-						</td>
-
-				<c:if test="${ status.count % 4 == 0 && !status.last }">
-					</tr>
-					<tr>
-				</c:if>
-
-			<c:if test="${ status.last }">
-				<c:if test="${ status.count % 4 == 0 }">
-					</tr>
-				</c:if>
-				<c:if test="${ status.count % 4 == 1 }">
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-				<c:if test="${ status.count % 4 == 2 }">
-						<td></td>
-						<td></td>
-					</tr>
-				</c:if>
-				<c:if test="${ status.count % 4 == 3 }">
-						<td></td>
-					</tr>
-				</c:if>
-			</c:if>
-
-			</c:forEach>
-		</table>
-	</center>
-</body>
- --%>
-
-
-
 <body class="back">
 	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 
@@ -103,132 +43,16 @@
 	</center>
 	<br><br>
 
-
+<c:forEach var="arts" items="${artList}" varStatus="loop">
 	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
+		<a href="/Contest/V2ArtDetail?art_id=<c:out value="${ arts.art_id }"/>"><figure> <img src="${arts.base64Image}" width="300" height="210" />
 		<figcaption>
 		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
+		<p><c:out value="${arts.title}"/></p>
+		</figcaption> </figure></a>
 	</div>
+</c:forEach>
 
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-
-	<br>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-
-	<br>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
-
-	<div class="img-left">
-		<figure> <img src="img/IMG_1503.JPG" width="300" height="210" />
-		<figcaption>
-		<h3>作品タイトル</h3>
-		<p>caption text here ...</p>
-		</figcaption> </figure>
-	</div>
 
 
 	<br>
