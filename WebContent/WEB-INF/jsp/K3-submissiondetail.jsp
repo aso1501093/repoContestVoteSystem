@@ -6,17 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>作品紹介</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-画像<img src="${art.base64Image }"><br>
-タイトル<c:out value="${art.title }"/><br>
+タイトル:<c:out value="${art.title }"/><br>
 <p>獲得票数:<c:out value="${art.vote_num }"/>票</p><br><br>
 
+<p class="img01 waku02 bImg shadow bWidth" ><img src="${art.base64Image }" width="900" height="630"></p>
+
+<ul>
 <c:forEach var="comments" items="${commentlist}" varStatus="loop">
-${comments }<br>
-
+<li>${comments }</li>
 </c:forEach>
-
+</ul>
 <form action="/Contest/K3AddComment" method="post">
 <input type="hidden" name="art_id" value="${art.art_id}">
 <input type="text" name="comment">
