@@ -17,7 +17,7 @@
 			<h1>
 				<c:out value="${ image.title }" />
 			</h1>
-			<br> <img border="0" width="300" height="300"
+			<br> <img class="gazouwaku" border="0" width="300" height="300"
 				src="<c:out value="${ image.base64Image }"/>" /> <br> <input
 				type="submit" name="vote" value="投票する" /> <br>
 				<c:out value="${votemessage}" />
