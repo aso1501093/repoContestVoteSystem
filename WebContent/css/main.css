@@ -93,6 +93,8 @@ a.login-button:hover span::before, a.login-button:focus span::before {
 	line-height: 150px;
 	border-radius: 50%;
 	text-align: center;
+	vertical-align: middle;
+	font-size: 15px;
 	/* 動く速度設定 */
 	transition: all 1s ease;
 	-webkit-transition: all 1s ease;
@@ -100,102 +102,6 @@ a.login-button:hover span::before, a.login-button:focus span::before {
 .newuser:hover {
 	transform: rotate(720deg);
 	-webkit-transform: rotate(720deg);
-}
-
-
-
-
-
-/* K1結果発表 */
-.ranking-tr {
-	height: 350px;
-}
-.ranking-th {
-	width: 150px;
-}
-.ranking-td {
-	width: 150px;
-}
-.k1button {
-	color: #fff;
-	text-decoration: none;
-	text-align: center;
-	position: relative;
-	z-index: 10;
-	display: block;
-	width: 150px;
-	height: 150px;
-	line-height: 150px;
-}
-.k1button::before {
-	content: '';
-	background-color: #dda284;
-	display: block;
-	position: absolute;
-	width: 150px;
-	height: 150px;
-	z-index: -1;
-	border-radius: 50%;
-	box-shadow: 0 0 0 0 #fff, 0 0 0 0 #dda284;
-	transition: all .2s ease;
-	-webkit-transition: all .2s ease;
-}
-.k1button:hover::before {
-	transform: scale(0.8);
-	-webkit-transform: scale(0.8);
-	box-shadow: 0 0 0 25px #fff, 0 0 0 27px #dda284;
-}
-
-
-
-
-
-/* K2応募作品一覧 */
-/* 総数固定 */
-.k2back {
-	position: fixed;
-	top: 120px;
-	right: 30px;
-	border: 1px solid #ffff80;
-	padding: 2pt;
-	background-color: #ffff80;
-	filter: alpha(opacity = 85);
-	-moz-opacity: 0.85;
-	-khtml-opacity: 0.85;
-	opacity: 0.85;
-	text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
-	-webkit-box-shadow: 1px 1px 2px #E7E7E7;
-	-moz-box-shadow: 1px 1px 2px #E7E7E7;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	font-size: 15px;
-	float: center;
-	border: 1px solid #2fa6fd;
-	background-color: #B2EBF2;
-	color: #757575;
-	width: 120px;
-	padding: 10px;
-	font-weight: bold;
-	border-radius: 50px;
-}
-
-
-
-
-
-/* K3 過去作品詳細*/
-.waku02.bImg:before {
-	box-shadow: none;
-}
-.waku02.shadow {
-	box-shadow: 1px 3px 8px rgba(20, 20, 20, 0.3);
-}
-.waku02.shadow:before {
-	box-shadow: inset 1px 1px 6px 0px rgba(0, 0, 0, 0.4), -1px -1px 2px
-		rgba(40, 40, 40, 0.2), 1px 1px 2px rgba(255, 255, 255, 1);
-}
-.waku02.bWidth {
-	border-width: 16px;
 }
 
 
@@ -316,6 +222,102 @@ a.touroku-button:hover span, a.touroku-button:focus span {
 a.touroku-button:hover span::before, a.touroku-button:focus span::before
 	{
 	background: #0FA7A9;
+}
+
+
+
+
+
+/* K1結果発表 */
+.ranking-tr {
+	height: 350px;
+}
+.ranking-th {
+	width: 150px;
+}
+.ranking-td {
+	width: 150px;
+}
+.k1button {
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	display: block;
+	width: 150px;
+	height: 150px;
+	line-height: 150px;
+}
+.k1button::before {
+	content: '';
+	background-color: #dda284;
+	display: block;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	z-index: -1;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0 #fff, 0 0 0 0 #dda284;
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+}
+.k1button:hover::before {
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	box-shadow: 0 0 0 25px #fff, 0 0 0 27px #dda284;
+}
+
+
+
+
+
+/* K2応募作品一覧 */
+/* 総数固定 */
+.k2back {
+	position: fixed;
+	top: 120px;
+	right: 30px;
+	border: 1px solid #ffff80;
+	padding: 2pt;
+	background-color: #ffff80;
+	filter: alpha(opacity = 85);
+	-moz-opacity: 0.85;
+	-khtml-opacity: 0.85;
+	opacity: 0.85;
+	text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
+	-webkit-box-shadow: 1px 1px 2px #E7E7E7;
+	-moz-box-shadow: 1px 1px 2px #E7E7E7;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	font-size: 15px;
+	float: center;
+	border: 1px solid #2fa6fd;
+	background-color: #B2EBF2;
+	color: #757575;
+	width: 120px;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 50px;
+}
+
+
+
+
+
+/* K3 過去作品詳細*/
+.waku02.bImg:before {
+	box-shadow: none;
+}
+.waku02.shadow {
+	box-shadow: 1px 3px 8px rgba(20, 20, 20, 0.3);
+}
+.waku02.shadow:before {
+	box-shadow: inset 1px 1px 6px 0px rgba(0, 0, 0, 0.4), -1px -1px 2px
+		rgba(40, 40, 40, 0.2), 1px 1px 2px rgba(255, 255, 255, 1);
+}
+.waku02.bWidth {
+	border-width: 16px;
 }
 
 
