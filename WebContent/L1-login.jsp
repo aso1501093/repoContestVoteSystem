@@ -49,28 +49,13 @@ function formData(){
 			<br>
 			<!-- 送信ボタン -->
 			<a class="login-button" onclick="formData();"><span data-hover="ログイン">Login</span></a>
+			<button type="submit" class="login-button" onclick="formData();"><span data-hover="ログイン">Login</span></button>
 			<br>
 			<br>
 			<br>
 		</form>
 
 
-
-	<%--
-	<form method="POST" action="T1Login">
-		<table>
-			<tr>
-				<td>ID</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>パスワード</td>
-				<td><input type="password" name="pass"></td>
-			</tr>
-		</table>
-		<button type="submit">ログイン</button>
-	</form>
-	 --%>
 
 	<p>まだ登録されてない方はこちら</p><br>
 	<a onclick="javascript:location.href='L2-regist.jsp';" class="newuser">新規登録</a>
