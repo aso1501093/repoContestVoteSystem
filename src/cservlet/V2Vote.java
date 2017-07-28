@@ -92,8 +92,15 @@ public class V2Vote extends HttpServlet {
 
 		//投票実行
 		VoteDAO voteDAO = new VoteDAO();
-		voteDAO.Vote(v);
+		boolean insert=voteDAO.Vote(v);
 
+		if(insert==true){
+
+		session.setAttribute("votemessage"," 投票完了！");
+		}else{
+
+		session.setAttribute("votemessage", "投票失敗");
+		}
 
 
 		RequestDispatcher rd =request.getRequestDispatcher("WEB-INF/jsp/V2-artdetail.jsp");
