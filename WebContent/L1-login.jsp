@@ -47,9 +47,9 @@ function formData(){
 			<br>
 			<br>
 			<br>
-			<!-- 送信ボタン -->
+
 			<a class="login-button" onclick="formData();"><span data-hover="ログイン">Login</span></a>
-			<button type="submit" class="login-button" onclick="formData();"><span data-hover="ログイン">Login</span></button>
+
 			<br>
 			<br>
 			<br>
@@ -59,9 +59,6 @@ function formData(){
 
 	<p>まだ登録されてない方はこちら</p><br>
 	<a onclick="javascript:location.href='L2-regist.jsp';" class="newuser">新規登録</a>
-	<%--
-	<button onclick="javascript:location.href='L2-regist.jsp';">新規登録</button>
-	 --%>
 	<p><c:out value="${registrationMessage}" /></p>
 	</div>
 	</div>

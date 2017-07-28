@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+
+
+
+
 /* ヘッダー */
 #headerArea {
 	background-color: #c0c0c0;
@@ -8,19 +12,21 @@
 	padding-left: 30px;
 	padding-top: 15px;
 }
-
 .header2 {
 	padding-right: 20px;
 	padding-bottom: 15px;
 	color: #ffffff;
 }
 
+
+
+
+
 /* L1ログイン */
 .login-content {
 	background-color: #c0c0c0;
 	height: 100%;
 }
-
 .login-form {
 	width: 800px;
 	height: 550px;
@@ -29,7 +35,6 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-
 a.login-button {
 	line-height: 32px;
 	-webkit-perspective: 300px;
@@ -37,7 +42,6 @@ a.login-button {
 	perspective: 300px;
 	text-align: center;
 }
-
 a.login-button span {
 	position: relative;
 	display: inline-block;
@@ -53,7 +57,6 @@ a.login-button span {
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
-
 a.login-button span::before {
 	position: absolute;
 	top: 100%;
@@ -72,49 +75,47 @@ a.login-button span::before {
 	-moz-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 }
-
 a.login-button:hover span, a.login-button:focus span {
 	-webkit-transform: rotateX(90deg) translateY(-22px);
 	-moz-transform: rotateX(90deg) translateY(-22px);
 	transform: rotateX(90deg) translateY(-22px);
 }
-
 a.login-button:hover span::before, a.login-button:focus span::before {
 	background: #0FA7A9;
 }
-
 .newuser {
 	color: #fff;
 	text-decoration: none;
 	background-color: #dda0dd;
 	display: block;
-	width: 150px;
-	height: 150px;
+	width: 110px;
+	height: 110px;
 	line-height: 150px;
 	border-radius: 50%;
-	/* ここで動く速度とか設定 */
+	text-align: center;
+	/* 動く速度設定 */
 	transition: all 1s ease;
 	-webkit-transition: all 1s ease;
 }
-
 .newuser:hover {
 	transform: rotate(720deg);
 	-webkit-transform: rotate(720deg);
 }
 
+
+
+
+
 /* K1結果発表 */
 .ranking-tr {
 	height: 350px;
 }
-
 .ranking-th {
 	width: 150px;
 }
-
 .ranking-td {
 	width: 150px;
 }
-
 .k1button {
 	color: #fff;
 	text-decoration: none;
@@ -126,7 +127,6 @@ a.login-button:hover span::before, a.login-button:focus span::before {
 	height: 150px;
 	line-height: 150px;
 }
-
 .k1button::before {
 	content: '';
 	background-color: #dda284;
@@ -140,12 +140,15 @@ a.login-button:hover span::before, a.login-button:focus span::before {
 	transition: all .2s ease;
 	-webkit-transition: all .2s ease;
 }
-
 .k1button:hover::before {
 	transform: scale(0.8);
 	-webkit-transform: scale(0.8);
 	box-shadow: 0 0 0 25px #fff, 0 0 0 27px #dda284;
 }
+
+
+
+
 
 /* K2応募作品一覧 */
 /* 総数固定 */
@@ -176,29 +179,33 @@ a.login-button:hover span::before, a.login-button:focus span::before {
 	border-radius: 50px;
 }
 
+
+
+
+
 /* K3 過去作品詳細*/
 .waku02.bImg:before {
 	box-shadow: none;
 }
-
 .waku02.shadow {
 	box-shadow: 1px 3px 8px rgba(20, 20, 20, 0.3);
 }
-
 .waku02.shadow:before {
 	box-shadow: inset 1px 1px 6px 0px rgba(0, 0, 0, 0.4), -1px -1px 2px
 		rgba(40, 40, 40, 0.2), 1px 1px 2px rgba(255, 255, 255, 1);
 }
-
 .waku02.bWidth {
 	border-width: 16px;
 }
+
+
+
+
 
 /* L2新規登録 */
 .l2td {
 	width: 100px;
 }
-
 .modoru {
 	font-size: 16px;
 	float: center;
@@ -210,11 +217,9 @@ a.login-button:hover span::before, a.login-button:focus span::before {
 	font-weight: bold;
 	border-radius: 8px;
 }
-
 .modoru:hover {
 	background-color: #E0F7FA;
 }
-
 a.modoru-button {
 	line-height: 32px;
 	-webkit-perspective: 300px;
@@ -222,7 +227,6 @@ a.modoru-button {
 	perspective: 300px;
 	text-align: center;
 }
-
 a.modoru-button span {
 	position: relative;
 	display: inline-block;
@@ -238,7 +242,6 @@ a.modoru-button span {
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
-
 a.modoru-button span::before {
 	position: absolute;
 	top: 100%;
@@ -257,17 +260,14 @@ a.modoru-button span::before {
 	-moz-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 }
-
 a.modoru-button:hover span, a.modoru-button:focus span {
 	-webkit-transform: rotateX(90deg) translateY(-22px);
 	-moz-transform: rotateX(90deg) translateY(-22px);
 	transform: rotateX(90deg) translateY(-22px);
 }
-
 a.modoru-button:hover span::before, a.modoru-button:focus span::before {
 	background: #0FA7A9;
 }
-
 a.touroku-button {
 	line-height: 32px;
 	-webkit-perspective: 300px;
@@ -275,7 +275,6 @@ a.touroku-button {
 	perspective: 300px;
 	text-align: center;
 }
-
 a.touroku-button span {
 	position: relative;
 	display: inline-block;
@@ -291,7 +290,6 @@ a.touroku-button span {
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
-
 a.touroku-button span::before {
 	position: absolute;
 	top: 100%;
@@ -310,17 +308,19 @@ a.touroku-button span::before {
 	-moz-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 }
-
 a.touroku-button:hover span, a.touroku-button:focus span {
 	-webkit-transform: rotateX(90deg) translateY(-22px);
 	-moz-transform: rotateX(90deg) translateY(-22px);
 	transform: rotateX(90deg) translateY(-22px);
 }
-
 a.touroku-button:hover span::before, a.touroku-button:focus span::before
 	{
 	background: #0FA7A9;
 }
+
+
+
+
 
 /* キャプションエフェクト */
 figure {
@@ -328,7 +328,6 @@ figure {
 	overflow: hidden;
 	width: 300px;
 }
-
 figcaption {
 	position: absolute;
 	top: 0;
@@ -343,12 +342,15 @@ figcaption {
 	transition: .5s;
 	opacity: 0;
 }
-
 figure:hover figcaption {
 	-webkit-transform: rotateX(0);
 	transform: rotateX(0);
 	opacity: 1;
 }
+
+
+
+
 
 /* 投票ボタンのエフェクト */
 #btn {
@@ -357,7 +359,6 @@ figure:hover figcaption {
 	width: 100px;
 	height: 100px;
 }
-
 #btn a {
 	position: relative;
 	display: table-cell;
@@ -367,7 +368,6 @@ figure:hover figcaption {
 	text-align: center;
 	vertical-align: middle;
 }
-
 #btn a:after {
 	position: absolute;
 	left: 0;
@@ -390,7 +390,6 @@ figure:hover figcaption {
 	-o-transform: scale(0, 0);
 	-ms-transition: scale(0, 0);
 }
-
 #btn a:hover:after {
     opacity: 1;
     transform: scale(1, 1);
@@ -399,10 +398,6 @@ figure:hover figcaption {
     -o-transform: scale(1, 1);
     -ms-transition: scale(1, 1);
 }
-
-
-
-
 .k2back {
  position: fixed;
  bottom: 50%;
@@ -435,236 +430,8 @@ figure:hover figcaption {
 
 }
 
-.modoru {
-	font-size: 16px;
-	float: center;
-	border: 1px solid #2fa6fd;
-	background-color: #B2EBF2;
-	color: #757575;
-	width: 100px;
-	padding: 10px;
-	font-weight: bold;
-	border-radius: 8px;
-}
-.modoru:hover {
-	background-color: #E0F7FA;
-}
-a.modoru-button {
-  line-height: 32px;
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  perspective: 300px;
-  text-align: center;
-}
-a.modoru-button span {
-  position: relative;
-  display: inline-block;
-  padding: 0 20px;
-  background: #0FA7A9;
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-a.modoru-button span::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0A8184;
-  content: attr(data-hover);
-  -webkit-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  transition: background 0.3s;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-}
-a.modoru-button:hover span,
-a.modoru-button:focus span {
-  -webkit-transform: rotateX(90deg) translateY(-22px);
-  -moz-transform: rotateX(90deg) translateY(-22px);
-  transform: rotateX(90deg) translateY(-22px);
-}
-a.modoru-button:hover span::before,
-a.modoru-button:focus span::before {
-  background: #0FA7A9;
-}
-a.touroku-button {
-  line-height: 32px;
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  perspective: 300px;
-  text-align: center;
-}
-a.touroku-button span {
-  position: relative;
-  display: inline-block;
-  padding: 0 20px;
-  background: #0FA7A9;
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-a.touroku-button span::before {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0A8184;
-  content: attr(data-hover);
-  -webkit-transition: background 0.3s;
-  -moz-transition: background 0.3s;
-  transition: background 0.3s;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-}
-a.touroku-button:hover span,
-a.touroku-button:focus span {
-  -webkit-transform: rotateX(90deg) translateY(-22px);
-  -moz-transform: rotateX(90deg) translateY(-22px);
-  transform: rotateX(90deg) translateY(-22px);
-}
-a.touroku-button:hover span::before,
-a.touroku-button:focus span::before {
-  background: #0FA7A9;
-}
 
 
-
-
-
-/* キャプションエフェクト */
-figure {
-  position: relative;
-  overflow: hidden;
-  width: 300px;
-}
-figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,.6);
-  -webkit-transform: rotateX(-180deg);
-  transform: rotateX(-180deg);
-  -webkit-transition: .5s;
-  transition: .5s;
-  opacity: 0;
-}
-figure:hover figcaption {
-  -webkit-transform: rotateX(0);
-  transform: rotateX(0);
-  opacity: 1;
-}
-
-
-
-
-
-/* 投票ボタンのエフェクト */
-#btn {
-    display: table;
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-}
-#btn a {
-    position: relative;
-    display: table-cell;
-    color: #52d3ff;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-}
-#btn a:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 50%;
-    border: 5px solid #52d3ff;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    content: "";
-    opacity: 0;
-    transition: .4s ease-in-out;
-    -webkit-transition: .4s ease-in-out;
-    -moz-transition: .4s ease-in-out;
-    -o-transition: .4s ease-in-out;
-    -ms-transition: .4s ease-in-out;
-    transform: scale(0, 0);
-    -webkit-transform: scale(0, 0);
-    -moz-transform: scale(0, 0);
-    -o-transform: scale(0, 0);
-    -ms-transition: scale(0, 0);
-}
-#btn a:hover:after {
-    opacity: 1;
-    transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    -moz-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    -ms-transition: scale(1, 1);
-}
-
-
-
-
-.k2back {
- position: fixed;
- bottom: 50%;
- right: 30px;
-
- border:1px solid #ffff80;
- padding:2pt;
- background-color: #ffff80;
- filter:alpha(opacity=85);
- -moz-opacity:0.85;
- -khtml-opacity: 0.85;
- opacity:0.85;
-
- text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #aaa;
- -webkit-box-shadow: 1px 1px 2px #E7E7E7;
- -moz-box-shadow: 1px 1px 2px #E7E7E7;
- -webkit-border-radius: 3px;
- -moz-border-radius: 3px;
-
-	font-size: 15px;
-	float: center;
-	border: 1px solid #2fa6fd;
-	background-color: #B2EBF2;
-	color: #757575;
-	width: 120px;
-	padding: 10px;
-	font-weight: bold;
-	border-radius: 50px;
-
-
-}
 
 
 /* 画像横並び */
@@ -674,6 +441,7 @@ figure:hover figcaption {
 	height: 300px;
 	background-color: #aa1144;
 }
+
 
 
 
