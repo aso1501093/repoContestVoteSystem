@@ -674,3 +674,13 @@ figure:hover figcaption {
 	height: 300px;
 	background-color: #aa1144;
 }
+
+
+
+
+/*  */
+.gazouwaku {
+	border: 1px solid #333; /* 外枠の色 */
+	padding: 5px;
+	background-color: #ffffff; /* 余白部分の色 */
+}
