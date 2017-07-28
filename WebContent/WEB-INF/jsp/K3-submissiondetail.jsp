@@ -10,10 +10,12 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
-タイトル:<c:out value="${art.title }"/><br>
+	<br clear="left">
+	<center>
+<p>タイトル:<c:out value="${art.title }"/></p>
 <p>獲得票数:<c:out value="${art.vote_num }"/>票</p><br><br>
 
-<p class="img01 waku02 bImg shadow bWidth" ><img src="${art.base64Image }" width="900" height="630"></p>
+<p class="img01 waku02 bImg shadow bWidth" ><img src="${art.base64Image }" width="300" height="300"></p>
 
 <ul>
 <c:forEach var="comments" items="${commentlist}" varStatus="loop">
@@ -25,5 +27,6 @@
 <input type="text" name="comment">
 <input type="submit" value="投稿">
 </form>
+</center>
 </body>
 </html>
