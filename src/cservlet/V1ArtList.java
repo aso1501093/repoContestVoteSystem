@@ -38,17 +38,21 @@ public class V1ArtList extends HttpServlet {
 		ContestDAO contestDAO = new ContestDAO();
 
 		//int contest_id = Integer.parseInt(request.getParameter("contest_id"));
-		int contest_id = 1;
-//	int user_id = 1501155;
-//		 User user = (User)session.getAttribute("user");
+		int contest_id = 2;
+		int user_id = 1501155;
+
 
 		list = artDAO.selectImageByIdList(contest_id);
-		contest = contestDAO.selectContestName(contest_id);
+		contest = contestDAO.getContestDetail(contest_id);
+		String entryperiod = contestDAO.convertDate(contest.getEntry_start_date()) + "~" + contestDAO.convertDate(contest.getEntry_end_date());
+		String voteperiod = contestDAO.convertDate(contest.getVote_start_date()) + "~" + contestDAO.convertDate(contest.getVote_end_date());
 
-		session.setAttribute("contestName", contest);
+		session.setAttribute("contestDetail", contest);
+		session.setAttribute("entryDate", entryperiod);
+		session.setAttribute("voteDate", voteperiod);
 		session.setAttribute("artList", list);
 		session.setAttribute("contestId", contest_id);
-	//	session.setAttribute("userId", user_id);
+		session.setAttribute("userId", user_id);
 
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/V1-artlist.jsp");
 		rd.forward(request, response);

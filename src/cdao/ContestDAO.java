@@ -192,6 +192,7 @@ public class ContestDAO {
 
 			if(rs.next()){
 
+
 				contest.setName(rs.getString("contest_name"));
 				contest.setEntry_start_date(rs.getDate("entry_start_date"));
 				contest.setEntry_end_date(rs.getDate("entry_end_date"));

@@ -39,6 +39,7 @@ public class Contest implements Serializable {
 	}
 	public String getPrize() {
 		return prize;
+
 	}
 	public void setPrize(String prize) {
 		this.prize = prize;
