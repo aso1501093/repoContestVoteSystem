@@ -39,7 +39,6 @@ function formData(contestid){
 </script>
 </head>
 <body>
-
 	<jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
 	<br clear="left">
 

@@ -42,7 +42,7 @@
 	</table>
 	</center>
 	<br><br>
-
+	
 <c:forEach var="arts" items="${artList}" varStatus="loop">
 	<div class="img-left">
 		<a href="/Contest/V2ArtDetail?art_id=<c:out value="${ arts.art_id }"/>"><figure> <img src="${arts.base64Image}" width="300" height="210" />

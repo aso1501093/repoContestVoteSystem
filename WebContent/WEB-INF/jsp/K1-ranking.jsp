@@ -38,61 +38,9 @@ function formData(contestid){
 }
 </script>
 </head>
-
-
-
-<%--
-<body>
-
-	<table border="1">
-		<c:forEach var="arts" items="${artlist}" varStatus="loop">
-			<c:if test="${loop.first}">
-				<tr>
-			</c:if>
-			<td id="${ arts.art_id}"  onclick="formData(${ arts.art_id});"><img src="${arts.base64Image}" /></td>
-
-
-
-			<c:if test="${(loop.count%4)==0 && !loop.last }">
-			</tr><tr>
-			</c:if>
-
-
-
-			<c:if test="${ loop.last && (loop.count%4)==1}">
-			<td></td><td></td><td></td></tr>
-			</c:if>
-
-
-			<c:if test="${ loop.last && (loop.count%4)==2}">
-			<td></td><td></td></tr>
-			</c:if>
-
-
-			<c:if test="${ loop.last && (loop.count%4)==3}">
-			<td></td></tr>
-			</c:if>
-
-
-			<c:if test="${ loop.last && (loop.count%4)==0}">
-			</tr>
-			</c:if>
-
-
-
-
-		</c:forEach>
-	</table>
-
-
-</body>
- --%>
-
-
-
  <body>
 <jsp:include page="/WEB-INF/jsp/header.jsp" flush="true" />
-
+<br clear="left">
 <center>
 <br><br>
 <h1><c:out value="${contestname }"/>　結果発表</h1>
