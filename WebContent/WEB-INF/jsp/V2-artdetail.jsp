@@ -21,6 +21,7 @@
 				src="<c:out value="${ image.base64Image }"/>" /> <br> <input
 				type="submit" name="vote" value="投票する" /> <br>
 				<c:out value="${votemessage}" />
+
 		</form>
 
 
