@@ -11,7 +11,56 @@ public class Contest implements Serializable {
 	Date end_date;
 	String overview;
 	String termtext;
-	
+	String theme;
+	String prize;
+	String qualifications;
+	Date vote_start_date;
+	Date vote_end_date;
+	Date entry_start_date;
+	Date entry_end_date;
+
+	public Date getEntry_start_date() {
+		return entry_start_date;
+	}
+	public void setEntry_start_date(Date entry_start_date) {
+		this.entry_start_date = entry_start_date;
+	}
+	public Date getEntry_end_date() {
+		return entry_end_date;
+	}
+	public void setEntry_end_date(Date entry_end_date) {
+		this.entry_end_date = entry_end_date;
+	}
+	public String getTheme() {
+		return theme;
+	}
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+	public String getPrize() {
+		return prize;
+	}
+	public void setPrize(String prize) {
+		this.prize = prize;
+	}
+	public String getQualifications() {
+		return qualifications;
+	}
+	public void setQualifications(String qualifications) {
+		this.qualifications = qualifications;
+	}
+	public Date getVote_start_date() {
+		return vote_start_date;
+	}
+	public void setVote_start_date(Date vote_start_date) {
+		this.vote_start_date = vote_start_date;
+	}
+	public Date getVote_end_date() {
+		return vote_end_date;
+	}
+	public void setVote_end_date(Date vote_end_date) {
+		this.vote_end_date = vote_end_date;
+	}
 	public String getTermtext() {
 		return termtext;
 	}
@@ -48,7 +97,7 @@ public class Contest implements Serializable {
 	public void setOverview(String overview) {
 		this.overview = overview;
 	}
-	
-	
+
+
 
 }
