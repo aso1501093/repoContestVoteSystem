@@ -99,7 +99,7 @@ public class V2Vote extends HttpServlet {
 		session.setAttribute("votemessage"," 投票完了！");
 		}else{
 
-		session.setAttribute("votemessage", "投票失敗");
+		session.setAttribute("votemessage", "投票失敗!");
 		}
 
 
