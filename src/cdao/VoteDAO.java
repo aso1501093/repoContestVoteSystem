@@ -36,7 +36,7 @@ public class VoteDAO {
 	}
 
 
-	public void Vote(Vote v){
+	public boolean Vote(Vote v){
 		int userId = v.getUser_id();
 		System.out.println("ユーザーID"+v.getUser_id());
 		int artId = v.getArt_id();
@@ -56,9 +56,13 @@ public class VoteDAO {
 	            stmt.executeUpdate();
 
 
+	            return true;
+
+
 
 	        }catch(Exception e){
 	            System.out.println("Inserterror1"+e);
+	            return false;
 	        }finally{
 	            try{
 	                close();
